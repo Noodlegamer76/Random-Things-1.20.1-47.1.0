@@ -1,0 +1,16 @@
+{
+  "random_things.creative_tab": "Random Things",
+
+  "item.random_things.cheese": "Cheese",
+  "item.random_things.cactus_pickaxe": "Cactus Pickaxe",
+  "item.random_things.cactus_sword": "Cactus Sword",
+  "item.random_things.wand": "Wand",
+  "item.random_things.blue_shovel": "Blue Shovel",
+  "item.random_things.iron_knife": "Iron Knife",
+  "item.random_things.cheese_sandwich": "Cheese Sandwhich",
+  "item.random_things.tnt_pickaxe": "TNT Pickaxe",
+
+  "block.random_things.brick_small09": "brick_small09",
+  "block.random_things.tntx5": "TNT X5",
+  "block.random_things.ender_tnt": "Ender TNT"
+}

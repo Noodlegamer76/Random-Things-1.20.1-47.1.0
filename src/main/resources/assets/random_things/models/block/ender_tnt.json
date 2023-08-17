@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "random_things:block/ender_tnt_bottom",
+    "side": "random_things:block/ender_tnt_side",
+    "top": "random_things:block/ender_tnt_top"
+  }
+}
