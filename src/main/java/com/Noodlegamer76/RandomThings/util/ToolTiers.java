@@ -14,6 +14,9 @@ public class ToolTiers {
         }),
         BLUE(2, 250, 6.0F, 2.0F, 14, () -> {
             return Ingredient.of(Items.IRON_INGOT);
+        }),
+        YOUTUBER(1000, 20202002, 99999.0F, 99999.0F, 9999, () -> {
+            return Ingredient.of(Items.IRON_INGOT);
         });
 
         private final int level;

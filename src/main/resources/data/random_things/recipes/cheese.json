@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "pattern": [
+    "#  ",
+    " / ",
+    "   "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:milk_bucket"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "random_things:cheese",
+    "count": 1
+  }
+}

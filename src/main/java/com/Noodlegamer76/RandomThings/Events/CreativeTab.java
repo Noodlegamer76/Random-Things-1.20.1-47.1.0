@@ -21,13 +21,18 @@ public class CreativeTab {
     public void buildContents(BuildCreativeModeTabContentsEvent event) {
         // Add to ingredients tab
         if (event.getTabKey() == CreativeTabInit.RANDOM_THINGS_TAB.getKey()) {
-            event.accept(ItemInit.CHEESE_ITEM.get());
-            event.accept(ItemInit.CACTUS_PICKAXE.get());
-            event.accept(ItemInit.CACTUS_SWORD.get());
-            event.accept(ItemInit.BRICK_SMALL09.get());
-            event.accept(ItemInit.WAND.get());
-            event.accept(ItemInit.BLUE_SHOVEL.get());
-            event.accept(ItemInit.CACTUS_CHEST.get());
+            event.accept(ItemInit.CHEESE_ITEM);
+            event.accept(ItemInit.CACTUS_PICKAXE);
+            event.accept(ItemInit.CACTUS_SWORD);
+            event.accept(ItemInit.BRICK_SMALL09);
+            event.accept(ItemInit.WAND);
+            event.accept(ItemInit.BLUE_SHOVEL);
+            event.accept(ItemInit.CACTUS_CHEST);
+            event.accept(ItemInit.CACTUS_SHIELD);
+            event.accept(ItemInit.TNT_PICKAXE);
+            event.accept(ItemInit.CHEESE_SANDWICH);
+            event.accept(ItemInit.IRON_KNIFE);
+            event.accept(ItemInit.YOUTUBER_PICKAXE);
         }
     }
 }

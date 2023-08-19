@@ -1,15 +1,19 @@
-package com.Noodlegamer76.RandomThings.client.renderer;
+package com.Noodlegamer76.RandomThings.client.renderer.blockentityrenderer;
 
 import com.Noodlegamer76.RandomThings.RandomThingsMod;
 import com.Noodlegamer76.RandomThings.init.BlockEntityInit;
+import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.ChestRenderer;
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.properties.ChestType;
 
@@ -37,5 +41,9 @@ public class CactusChestRenderer extends ChestRenderer {
         }
     }
 
+    @Override
+    public void render(BlockEntity blockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
+    super.render(blockEntity, pPartialTick, pPoseStack, pBuffer, pPackedLight, pPackedOverlay);
+    }
 
 }

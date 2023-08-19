@@ -21,7 +21,10 @@ import javax.annotation.Nonnull;
 
 @Mod.EventBusSubscriber(Dist.CLIENT)
 public class WandInventoryCapability implements ICapabilitySerializable<CompoundTag> {
-    boolean isCreated;
+    public boolean isCreated = false;
+    public Double first = 0.0;
+    public Double second = 0.0;
+    public Double third = 0.0;
 
     public static final Capability<WandInventoryCapability> WAND_INVENTORY_CAPABILITY =
             CapabilityManager.get(new CapabilityToken<WandInventoryCapability>(){});
@@ -46,7 +49,6 @@ public class WandInventoryCapability implements ICapabilitySerializable<Compound
     @Override
     public CompoundTag serializeNBT() {
         CompoundTag nbt = getItemHandler().serializeNBT();
-        nbt.putBoolean("is_created", true);
         return nbt;
     }
     @Override

@@ -2,7 +2,6 @@ package com.Noodlegamer76.RandomThings.init;
 
 import com.Noodlegamer76.RandomThings.BlockEntities.CactusChestBlockEntity;
 import com.Noodlegamer76.RandomThings.RandomThingsMod;
-import com.Noodlegamer76.RandomThings.client.renderer.CactusChestRenderer;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

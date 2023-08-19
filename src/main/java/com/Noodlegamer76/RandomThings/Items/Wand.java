@@ -1,12 +1,17 @@
 package com.Noodlegamer76.RandomThings.Items;
 
 import com.Noodlegamer76.RandomThings.menus.WandMenu;
+import com.Noodlegamer76.RandomThings.spellcrafting.wand.CreateWand;
 import io.netty.buffer.Unpooled;
+import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.OutgoingChatMessage;
+import net.minecraft.network.chat.PlayerChatMessage;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.*;
+import net.minecraft.world.entity.Display;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -14,11 +19,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.network.NetworkHooks;
+import org.checkerframework.checker.units.qual.C;
 
 import javax.annotation.Nullable;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -33,6 +40,7 @@ public class Wand extends Item{
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         InteractionResultHolder<ItemStack> ar = super.use(level, player, hand);
         ItemStack itemstack = ar.getObject();
+        ItemStack held = player.getItemInHand(hand);
         double x = player.getX();
         double y = player.getY();
         double z = player.getZ();
@@ -40,10 +48,12 @@ public class Wand extends Item{
             ItemStack item = player.getItemInHand(hand);
 
             if (serverPlayer.isCrouching()) {
+                if (held.getCapability(WandInventoryCapability.WAND_INVENTORY_CAPABILITY).isPresent()); {
+                    WandInventoryCapability capability = held.getCapability(WandInventoryCapability.WAND_INVENTORY_CAPABILITY).orElseThrow(RuntimeException::new);
                 NetworkHooks.openScreen(serverPlayer, new MenuProvider() {
                     @Override
                     public Component getDisplayName() {
-                        return Component.literal("Asasd");
+                        return Component.literal(((Double) (capability.first + 1.0)).toString());
                     }
 
                     @Override
@@ -60,8 +70,9 @@ public class Wand extends Item{
             }
             if (!level.isClientSide) {
                 if (!player.isCrouching()) {
-                    LazyOptional<WandInventoryCapability> cap = stack.getCapability(WandInventoryCapability.WAND_INVENTORY_CAPABILITY);
-                    cap.ifPresent(WandInventoryCapability::cast);
+
+                    }
+
                 }
             }
         }
@@ -71,7 +82,13 @@ public class Wand extends Item{
 
     @Override
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag compound) {
-        return new WandInventoryCapability();
+        WandInventoryCapability capability = new WandInventoryCapability();
+        capability.isCreated = true;
+        CreateWand create = new CreateWand();
+        capability.first = create.first;
+        capability.second = create.second;
+        capability.third = create.third;
+        return capability;
     }
 
     @Override

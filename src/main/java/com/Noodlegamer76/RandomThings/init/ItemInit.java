@@ -21,9 +21,12 @@ public class ItemInit {
     public static final RegistryObject<Item> IRON_KNIFE = ITEMS.register("iron_knife", () -> new SwordItem(Tiers.IRON, 3, -2.4F, new Item.Properties()));
     public static final RegistryObject<Item> CHEESE_SANDWICH = ITEMS.register("cheese_sandwich", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TNT_PICKAXE = ITEMS.register("tnt_pickaxe", () -> new TntPickaxe(Tiers.STONE, 1, -2.8F, new Item.Properties()));
+    public static final RegistryObject<Item> CACTUS_SHIELD = ITEMS.register("cactus_shield", () -> new CactusShield(new Item.Properties()));
+    public static final RegistryObject<Item> YOUTUBER_PICKAXE = ITEMS.register("youtuber_pickaxe", () -> new YoutuberPickaxe(ToolTiers.ModItemTier.YOUTUBER, 1, -2.8F, new Item.Properties()));
 
     public static final RegistryObject<Item> MODIFIER_ITEM = ITEMS.register("modifier_item", () -> new ModifierItem(new Item.Properties()));
     public static final RegistryObject<Item> SPELL_ITEM = ITEMS.register("spell_item", () -> new SpellItem(new Item.Properties()));
+
 
     //BlockItems
     public static final RegistryObject<Item> BRICK_SMALL09 = ITEMS.register("brick_small09", () -> new BlockItem(BlockInit.BRICK_SMALL09.get(), new Item.Properties()));

@@ -39,6 +39,7 @@ public class RandomThingsMod
 
     public RandomThingsMod()
     {
+
         //explosion event test
         //MinecraftForge.EVENT_BUS.register(new ExplosionEvent());
 
@@ -65,6 +66,7 @@ public class RandomThingsMod
             modEventBus.register(new ClientSetupEvent());
 
         }
+
 
 
         // Register the Deferred Register to the mod event bus so blocks get registered

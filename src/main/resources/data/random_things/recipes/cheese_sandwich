@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    " / ",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:bread"
+    },
+    "/": {
+      "item": "random_things:cheese"
+    }
+  },
+  "result": {
+    "item": "random_things:cheese_sandwich",
+    "count": 1
+  }
+}
