@@ -11,25 +11,62 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ItemInit {
+
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, RandomThingsMod.MODID);
     //Items
-    public static final RegistryObject<Item> CHEESE_ITEM = ITEMS.register("cheese", () -> new Cheese(new Item.Properties()));
-    public static final RegistryObject<Item> CACTUS_SWORD = ITEMS.register("cactus_sword", () -> new CactusSword(ToolTiers.ModItemTier.CACTUS, 3, -2.4F, new Item.Properties()));
-    public static final RegistryObject<Item> CACTUS_PICKAXE = ITEMS.register("cactus_pickaxe", () -> new CactusPickaxe(ToolTiers.ModItemTier.CACTUS, 1, -2.8F, new Item.Properties()));
-    public static final RegistryObject<Item> WAND = ITEMS.register("wand", () -> new Wand(new Item.Properties()));
-    public static final RegistryObject<Item> BLUE_SHOVEL = ITEMS.register("blue_shovel", () -> new ShovelItem(ToolTiers.ModItemTier.BLUE, 1.5F, -3.0F, new Item.Properties()));
-    public static final RegistryObject<Item> IRON_KNIFE = ITEMS.register("iron_knife", () -> new SwordItem(Tiers.IRON, 3, -2.4F, new Item.Properties()));
-    public static final RegistryObject<Item> CHEESE_SANDWICH = ITEMS.register("cheese_sandwich", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> TNT_PICKAXE = ITEMS.register("tnt_pickaxe", () -> new TntPickaxe(Tiers.STONE, 1, -2.8F, new Item.Properties()));
-    public static final RegistryObject<Item> CACTUS_SHIELD = ITEMS.register("cactus_shield", () -> new CactusShield(new Item.Properties()));
-    public static final RegistryObject<Item> YOUTUBER_PICKAXE = ITEMS.register("youtuber_pickaxe", () -> new YoutuberPickaxe(ToolTiers.ModItemTier.YOUTUBER, 1, -2.8F, new Item.Properties()));
+    public static final RegistryObject<Item> CHEESE_ITEM = ITEMS.register("cheese",
+            () -> new Cheese(new Item.Properties()));
+    public static final RegistryObject<Item> CACTUS_SWORD = ITEMS.register("cactus_sword",
+            () -> new CactusSword(ToolTiers.ModItemTier.CACTUS, 3, -2.4F, new Item.Properties()));
+    public static final RegistryObject<Item> CACTUS_PICKAXE = ITEMS.register("cactus_pickaxe",
+            () -> new CactusPickaxe(ToolTiers.ModItemTier.CACTUS, 1, -2.8F, new Item.Properties()));
+    public static final RegistryObject<Item> WAND = ITEMS.register("wand",
+            () -> new Wand(new Item.Properties()));
+    public static final RegistryObject<Item> BLUE_SHOVEL = ITEMS.register("blue_shovel",
+            () -> new ShovelItem(ToolTiers.ModItemTier.BLUE, 1.5F, -3.0F, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_KNIFE = ITEMS.register("iron_knife",
+            () -> new SwordItem(Tiers.IRON, 3, -2.4F, new Item.Properties()));
+    public static final RegistryObject<Item> CHEESE_SANDWICH = ITEMS.register("cheese_sandwich.json",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TNT_PICKAXE = ITEMS.register("tnt_pickaxe",
+            () -> new TntPickaxe(Tiers.STONE, 1, -2.8F, new Item.Properties()));
+    public static final RegistryObject<Item> CACTUS_SHIELD = ITEMS.register("cactus_shield",
+            () -> new CactusShield(new Item.Properties()));
+    public static final RegistryObject<Item> YOUTUBER_PICKAXE = ITEMS.register("youtuber_pickaxe",
+            () -> new YoutuberPickaxe(ToolTiers.ModItemTier.YOUTUBER, 1, -2.8F, new Item.Properties()));
 
-    public static final RegistryObject<Item> MODIFIER_ITEM = ITEMS.register("modifier_item", () -> new ModifierItem(new Item.Properties()));
-    public static final RegistryObject<Item> SPELL_ITEM = ITEMS.register("spell_item", () -> new SpellItem(new Item.Properties()));
+    public static final RegistryObject<Item> MODIFIER_ITEM = ITEMS.register("modifier_item",
+            () -> new ModifierItem(new Item.Properties()));
+    public static final RegistryObject<Item> SPELL_ITEM = ITEMS.register("spell_item",
+            () -> new SpellItem(new Item.Properties()));
 
 
     //BlockItems
-    public static final RegistryObject<Item> BRICK_SMALL09 = ITEMS.register("brick_small09", () -> new BlockItem(BlockInit.BRICK_SMALL09.get(), new Item.Properties()));
-    public static final RegistryObject<Item> CACTUS_CHEST = ITEMS.register("cactus_chest", () -> new BlockItem(BlockInit.CACTUS_CHEST.get(), new Item.Properties()));
+    public static final RegistryObject<Item> BRICK_SMALL09 = ITEMS.register("brick_small09",
+            () -> new BlockItem(BlockInit.BRICK_SMALL09.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CACTUS_CHEST = ITEMS.register("cactus_chest",
+            () -> new BlockItem(BlockInit.CACTUS_CHEST.get(), new Item.Properties()));
+    public static final RegistryObject<Item> TNT_CHEST = ITEMS.register("tnt_chest",
+            () -> new BlockItem(BlockInit.TNT_CHEST.get(), new Item.Properties()));
+    public static final RegistryObject<Item> QUICK_SAND = ITEMS.register("quick_sand",
+            () -> new BlockItem(BlockInit.QUICK_SAND.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_ORE = ITEMS.register("rainbow_ore",
+            () -> new BlockItem(BlockInit.RAINBOW_ORE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DEEPSLATE_RAINBOW_ORE = ITEMS.register("deepslate_rainbow_ore",
+            () -> new BlockItem(BlockInit.DEEPSLATE_RAINBOW_ORE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_LOG = ITEMS.register("rainbow_log",
+            () -> new BlockItem(BlockInit.RAINBOW_LOG.get(), new Item.Properties()));
+    public static final RegistryObject<Item> STRIPPED_RAINBOW_LOG = ITEMS.register("stripped_rainbow_log",
+            () -> new BlockItem(BlockInit.STRIPPED_RAINBOW_LOG.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_WOOD = ITEMS.register("rainbow_wood",
+            () -> new BlockItem(BlockInit.RAINBOW_WOOD.get(), new Item.Properties()));
+    public static final RegistryObject<Item> STRIPPED_RAINBOW_WOOD = ITEMS.register("stripped_rainbow_wood",
+            () -> new BlockItem(BlockInit.STRIPPED_RAINBOW_WOOD.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_PLANKS = ITEMS.register("rainbow_planks",
+            () -> new BlockItem(BlockInit.RAINBOW_PLANKS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_LEAVES = ITEMS.register("rainbow_leaves",
+            () -> new BlockItem(BlockInit.RAINBOW_LEAVES.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_SAPLING = ITEMS.register("rainbow_sapling",
+            () -> new BlockItem(BlockInit.RAINBOW_SAPLING.get(), new Item.Properties()));
 
 }

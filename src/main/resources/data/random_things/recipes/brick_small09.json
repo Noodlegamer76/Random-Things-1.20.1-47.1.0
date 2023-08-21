@@ -1,17 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "## ",
-    "## ",
-    "   "
-  ],
+  "category": "misc",
   "key": {
-    "#": {
+    "S": {
       "item": "minecraft:bricks"
     }
   },
+  "pattern": [
+    "SS",
+    "SS"
+  ],
   "result": {
-    "item": "random_things:brick_small09",
-    "count": 1
-  }
+    "count": 4,
+    "item": "random_things:brick_small09"
+  },
+  "show_notification": true
 }

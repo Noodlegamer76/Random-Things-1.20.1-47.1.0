@@ -3,6 +3,7 @@ package com.Noodlegamer76.RandomThings.Events;
 import com.Noodlegamer76.RandomThings.RandomThingsMod;
 import com.Noodlegamer76.RandomThings.client.models.ShieldModModel;
 import com.Noodlegamer76.RandomThings.client.renderer.blockentityrenderer.CactusChestRenderer;
+import com.Noodlegamer76.RandomThings.client.renderer.blockentityrenderer.TntChestRenderer;
 import com.Noodlegamer76.RandomThings.init.BlockEntityInit;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraftforge.api.distmarker.Dist;
@@ -16,6 +17,7 @@ public class EntityRenderer {
     public static void entityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         //event.registerEntityRenderer(EntityInit.PRIMED_TNTX5.get(), PrimedTntX5Renderer::new);
         event.registerBlockEntityRenderer(BlockEntityInit.CACTUS_CHEST.get(), CactusChestRenderer::new);
+        event.registerBlockEntityRenderer(BlockEntityInit.TNT_CHEST.get(), TntChestRenderer::new);
     }
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {

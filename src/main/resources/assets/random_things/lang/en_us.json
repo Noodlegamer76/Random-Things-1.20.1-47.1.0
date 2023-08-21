@@ -7,10 +7,19 @@
   "item.random_things.wand": "Wand",
   "item.random_things.blue_shovel": "Blue Shovel",
   "item.random_things.iron_knife": "Iron Knife",
-  "item.random_things.cheese_sandwich": "Cheese Sandwhich",
+  "item.random_things.cheese_sandwich": "Cheese Sandwich",
   "item.random_things.tnt_pickaxe": "TNT Pickaxe",
+  "item.random_things.youtuber_pickaxe": "Youtuber Pickaxe",
+  "item.random_things.cactus_shield": "Cactus Shield",
 
   "block.random_things.brick_small09": "brick_small09",
   "block.random_things.tntx5": "TNT X5",
-  "block.random_things.ender_tnt": "Ender TNT"
+  "block.random_things.ender_tnt": "Ender TNT",
+  "block.random_things.tnt_chest": "TNT Chest",
+  "block.random_things.cactus_chest": "Cactus Chest",
+  "block.random_things.quick_sand": "Quick Sand",
+  "block.random_things.rainbow_ore": "Rainbow Ore",
+  "block.random_things.deepslate_rainbow_ore": "Deepslate Rainbow Ore",
+  "block.random_things.rainbow_log": "Rainbow Log",
+  "block.random_things.stripped_rainbow_log": "Stripped Rainbow Log"
 }

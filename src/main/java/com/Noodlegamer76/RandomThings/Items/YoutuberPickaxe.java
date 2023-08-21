@@ -15,23 +15,43 @@ public class YoutuberPickaxe extends PickaxeItem {
 
     @Override
     public boolean mineBlock(ItemStack item, Level level, BlockState blockState, BlockPos blockPos, LivingEntity player) {
-    if (!level.isClientSide) {
-        BlockPos current = blockPos;
-        for(int i = 0;i < 100;i++) {
-            int offset = (int) ((Math.random() * (6 - 1)) + 1);
-            switch (offset) {
-                case 1: {current = current.above(1); break;}
-                case 2: {current = current.below(1); break;}
-                case 3: {current = current.east(1); break;}
-                case 4: {current = current.west(1); break;}
-                case 5: {current = current.north(1); break;}
-                case 6: {current = current.south(1); break;}
-                default: player.hurt(level.damageSources().cactus(), 1);
+
+        if (!level.isClientSide()) {
+            int width = 10 / 2;
+            int height = 10 / 2;
+            int length = 10 / 2;
+            level.destroyBlock(blockPos, true, player);
+            for(int dx = width / 2 - width;dx < width;dx++) {
+                for(int dy = height / 2 - height;dy < height; dy++) {
+                    for(int dz = length / 2 - length;dz < length; dz++) {
+                        level.destroyBlock(new BlockPos(blockPos.east(dx).getX(), blockPos.above(dy).getY(), blockPos.north(dz).getZ()), true, player);
+                    }
+                }
             }
-            level.destroyBlock(current, true, player);
-            level.explode(player, current.getX(), current.getY(), current.getZ(), 4, Level.ExplosionInteraction.TNT);
         }
-    }
+
+
+
+
+
+
+        //if (!level.isClientSide) {
+   //    BlockPos current = blockPos;
+   //    for(int i = 0;i < 100;i++) {
+   //        int offset = (int) ((Math.random() * (6 - 1)) + 1);
+   //        switch (offset) {
+   //            case 1: {current = current.above(1); break;}
+   //            case 2: {current = current.below(1); break;}
+   //            case 3: {current = current.east(1); break;}
+   //            case 4: {current = current.west(1); break;}
+   //            case 5: {current = current.north(1); break;}
+   //            case 6: {current = current.south(1); break;}
+   //            default: player.hurt(level.damageSources().cactus(), 1);
+   //        }
+   //        level.destroyBlock(current, true, player);
+   //        level.explode(player, current.getX(), current.getY(), current.getZ(), 4, Level.ExplosionInteraction.TNT);
+   //    }
+   //}
         return true;
     }
 }

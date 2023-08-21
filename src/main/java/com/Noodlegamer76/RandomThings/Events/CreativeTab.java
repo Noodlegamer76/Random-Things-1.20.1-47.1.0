@@ -33,6 +33,17 @@ public class CreativeTab {
             event.accept(ItemInit.CHEESE_SANDWICH);
             event.accept(ItemInit.IRON_KNIFE);
             event.accept(ItemInit.YOUTUBER_PICKAXE);
+            event.accept(ItemInit.TNT_CHEST);
+            event.accept(ItemInit.QUICK_SAND);
+            event.accept(ItemInit.RAINBOW_ORE);
+            event.accept(ItemInit.DEEPSLATE_RAINBOW_ORE);
+            event.accept(ItemInit.RAINBOW_LOG);
+            event.accept(ItemInit.STRIPPED_RAINBOW_LOG);
+            event.accept(ItemInit.RAINBOW_WOOD);
+            event.accept(ItemInit.STRIPPED_RAINBOW_WOOD);
+            event.accept(ItemInit.RAINBOW_LEAVES);
+            event.accept(ItemInit.RAINBOW_SAPLING);
+            event.accept(ItemInit.RAINBOW_PLANKS);
         }
     }
 }

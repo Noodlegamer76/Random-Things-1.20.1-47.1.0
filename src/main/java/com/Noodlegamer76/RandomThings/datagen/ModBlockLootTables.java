@@ -1,0 +1,46 @@
+package com.Noodlegamer76.RandomThings.datagen;
+
+import com.Noodlegamer76.RandomThings.init.BlockInit;
+import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.world.flag.FeatureFlagSet;
+import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.registries.RegistryObject;
+
+import java.util.Set;
+
+public class ModBlockLootTables extends BlockLootSubProvider {
+    protected ModBlockLootTables() {
+        super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+    }
+
+    @Override
+    protected void generate() {
+        dropSelf(BlockInit.BRICK_SMALL09.get());
+        dropSelf(BlockInit.CACTUS_CHEST.get());
+        dropSelf(BlockInit.TNT_CHEST.get());
+        dropSelf(BlockInit.QUICK_SAND.get());
+        add(BlockInit.RAINBOW_ORE.get(),
+                (block -> createOreDrop(BlockInit.RAINBOW_ORE.get(), Items.STICK)));
+        add(BlockInit.DEEPSLATE_RAINBOW_ORE.get(),
+                (block -> createOreDrop(BlockInit.DEEPSLATE_RAINBOW_ORE.get(), Items.DIAMOND)));
+        dropSelf(BlockInit.RAINBOW_LOG.get());
+        dropSelf(BlockInit.STRIPPED_RAINBOW_LOG.get());
+        dropSelf(BlockInit.RAINBOW_WOOD.get());
+        dropSelf(BlockInit.STRIPPED_RAINBOW_WOOD.get());
+        dropSelf(BlockInit.RAINBOW_PLANKS.get());
+        dropSelf(BlockInit.RAINBOW_SAPLING.get());
+
+        this.add(BlockInit.RAINBOW_LEAVES.get(), (block) ->
+                createLeavesDrops(block, BlockInit.RAINBOW_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+    }
+
+
+
+    @Override
+    protected Iterable<Block> getKnownBlocks() {
+        return BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+    }
+}
