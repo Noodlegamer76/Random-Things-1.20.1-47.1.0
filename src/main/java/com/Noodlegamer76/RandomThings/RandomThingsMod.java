@@ -2,6 +2,7 @@ package com.Noodlegamer76.RandomThings;
 
 import com.Noodlegamer76.RandomThings.Events.CreativeTab;
 import com.Noodlegamer76.RandomThings.Events.ClientSetupEvent;
+import com.Noodlegamer76.RandomThings.enchantment.ModEnchantments;
 import com.Noodlegamer76.RandomThings.init.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -55,6 +56,7 @@ public class RandomThingsMod
         CreativeTabInit.CREATIVE_TABS.register(modEventBus);
 
         FeaturesInit.FEATURES.register(modEventBus);
+        ModEnchantments.ENCHANTMENTS.register(modEventBus);
 
         //ModConfiguredFeatures.register(modEventBus);
 

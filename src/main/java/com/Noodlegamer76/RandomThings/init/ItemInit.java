@@ -13,6 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class ItemInit {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, RandomThingsMod.MODID);
+
     //Items
     public static final RegistryObject<Item> CHEESE_ITEM = ITEMS.register("cheese",
             () -> new Cheese(new Item.Properties()));
@@ -68,5 +69,23 @@ public class ItemInit {
             () -> new BlockItem(BlockInit.RAINBOW_LEAVES.get(), new Item.Properties()));
     public static final RegistryObject<Item> RAINBOW_SAPLING = ITEMS.register("rainbow_sapling",
             () -> new BlockItem(BlockInit.RAINBOW_SAPLING.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_SLAB = ITEMS.register("rainbow_slab",
+            () -> new BlockItem(BlockInit.RAINBOW_SLAB.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_STAIRS = ITEMS.register("rainbow_stairs",
+            () -> new BlockItem(BlockInit.RAINBOW_STAIRS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_DOOR = ITEMS.register("rainbow_door",
+            () -> new BlockItem(BlockInit.RAINBOW_DOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_FENCE = ITEMS.register("rainbow_fence",
+            () -> new BlockItem(BlockInit.RAINBOW_FENCE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_FENCE_GATE = ITEMS.register("rainbow_fence_gate",
+            () -> new BlockItem(BlockInit.RAINBOW_FENCE_GATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_BUTTON = ITEMS.register("rainbow_button",
+            () -> new BlockItem(BlockInit.RAINBOW_BUTTON.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_PRESSURE_PLATE = ITEMS.register("rainbow_pressure_plate",
+            () -> new BlockItem(BlockInit.RAINBOW_PRESSURE_PLATE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_WALL = ITEMS.register("rainbow_wall",
+            () -> new BlockItem(BlockInit.RAINBOW_WALL.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_TRAPDOOR = ITEMS.register("rainbow_trapdoor",
+            () -> new BlockItem(BlockInit.RAINBOW_TRAPDOOR.get(), new Item.Properties()));
 
 }

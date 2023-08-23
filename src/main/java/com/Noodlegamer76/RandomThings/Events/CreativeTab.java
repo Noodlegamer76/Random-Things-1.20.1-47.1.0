@@ -44,6 +44,15 @@ public class CreativeTab {
             event.accept(ItemInit.RAINBOW_LEAVES);
             event.accept(ItemInit.RAINBOW_SAPLING);
             event.accept(ItemInit.RAINBOW_PLANKS);
+            event.accept(ItemInit.RAINBOW_SLAB);
+            event.accept(ItemInit.RAINBOW_STAIRS);
+            event.accept(ItemInit.RAINBOW_DOOR);
+            event.accept(ItemInit.RAINBOW_FENCE);
+            event.accept(ItemInit.RAINBOW_FENCE_GATE);
+            event.accept(ItemInit.RAINBOW_WALL);
+            event.accept(ItemInit.RAINBOW_BUTTON);
+            event.accept(ItemInit.RAINBOW_PRESSURE_PLATE);
+            event.accept(ItemInit.RAINBOW_TRAPDOOR);
         }
     }
 }

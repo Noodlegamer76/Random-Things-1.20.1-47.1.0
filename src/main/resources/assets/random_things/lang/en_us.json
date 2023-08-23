@@ -21,5 +21,21 @@
   "block.random_things.rainbow_ore": "Rainbow Ore",
   "block.random_things.deepslate_rainbow_ore": "Deepslate Rainbow Ore",
   "block.random_things.rainbow_log": "Rainbow Log",
-  "block.random_things.stripped_rainbow_log": "Stripped Rainbow Log"
+  "block.random_things.stripped_rainbow_log": "Stripped Rainbow Log",
+  "block.random_things.rainbow_planks": "Rainbow planks",
+  "block.random_things.rainbow_wood": "Rainbow Wood",
+  "block.random_things.stripped_rainbow_wood": "Stripped Rainbow Wood",
+  "block.random_things.rainbow_slab": "Rainbow Slab",
+  "block.random_things.rainbow_stairs": "Rainbow Stairs",
+  "block.random_things.rainbow_door": "Rainbow Door",
+  "block.random_things.rainbow_sapling": "Rainbow Sapling",
+  "block.random_things.rainbow_fence": "Rainbow Fence",
+  "block.random_things.rainbow_trapdoor": "Rainbow Trapdoor",
+  "block.random_things.rainbow_fence_gate": "Rainbow Fence Gate",
+  "block.random_things.rainbow_wall": "Rainbow Wall",
+  "block.random_things.rainbow_button": "Rainbow Button",
+  "block.random_things.rainbow_pressure_plate": "Rainbow Pressure Plate",
+  "block.random_things.rainbow_leaves": "Rainbow Leaves",
+
+  "enchantment.random_things.explosion": "Explosion"
 }

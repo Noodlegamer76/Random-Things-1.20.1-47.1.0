@@ -1,15 +1,15 @@
 {
   "variants": {
     "axis=x": {
-      "model": "random_things:block/rainbow_log",
+      "model": "random_things:block/stripped_rainbow_log",
       "x": 90,
       "y": 90
     },
     "axis=y": {
-      "model": "random_things:block/rainbow_log"
+      "model": "random_things:block/stripped_rainbow_log"
     },
     "axis=z": {
-      "model": "random_things:block/rainbow_log",
+      "model": "random_things:block/stripped_rainbow_log",
       "x": 90
     }
   }

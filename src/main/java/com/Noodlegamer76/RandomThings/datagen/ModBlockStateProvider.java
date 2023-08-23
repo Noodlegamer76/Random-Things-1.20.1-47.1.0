@@ -4,8 +4,7 @@ import com.Noodlegamer76.RandomThings.RandomThingsMod;
 import com.Noodlegamer76.RandomThings.init.BlockInit;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -21,11 +20,30 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(BlockInit.BRICK_SMALL09);
         blockWithItem(BlockInit.RAINBOW_ORE);
         blockWithItem(BlockInit.DEEPSLATE_RAINBOW_ORE);
-
-        blockWithItem(BlockInit.RAINBOW_PLANKS);
         blockWithItem(BlockInit.RAINBOW_LEAVES);
 
+        blockWithItem(BlockInit.RAINBOW_PLANKS);
+        blockWithItem(BlockInit.QUICK_SAND);
+
         saplingBlock(BlockInit.RAINBOW_SAPLING);
+
+        final ResourceLocation RAINBOW_PLANKS_TEXTURE = new ResourceLocation(RandomThingsMod.MODID, "block/rainbow_planks");
+        final ResourceLocation RAINBOW_LOG_SIDE_TEXTURE = new ResourceLocation(RandomThingsMod.MODID, "block/rainbow_log_side");
+        final ResourceLocation STRIPPED_RAINBOW_LOG_SIDE_TEXTURE = new ResourceLocation(RandomThingsMod.MODID, "block/stripped_rainbow_log_side");
+
+        slabBlock((SlabBlock) BlockInit.RAINBOW_SLAB.get(), RAINBOW_PLANKS_TEXTURE,
+                RAINBOW_PLANKS_TEXTURE);
+        stairsBlock((StairBlock) BlockInit.RAINBOW_STAIRS.get(), RAINBOW_PLANKS_TEXTURE);
+
+        buttonBlock((ButtonBlock) BlockInit.RAINBOW_BUTTON.get(), RAINBOW_PLANKS_TEXTURE);
+        pressurePlateBlock((PressurePlateBlock) BlockInit.RAINBOW_PRESSURE_PLATE.get(), RAINBOW_PLANKS_TEXTURE);
+
+        fenceBlock((FenceBlock) BlockInit.RAINBOW_FENCE.get(), RAINBOW_PLANKS_TEXTURE);
+        fenceGateBlock((FenceGateBlock) BlockInit.RAINBOW_FENCE_GATE.get(), RAINBOW_PLANKS_TEXTURE);
+        wallBlock((WallBlock) BlockInit.RAINBOW_WALL.get(), RAINBOW_PLANKS_TEXTURE);
+
+        doorBlockWithRenderType((DoorBlock) BlockInit.RAINBOW_DOOR.get(), modLoc("block/rainbow_door_bottom"), modLoc("block/rainbow_door_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) BlockInit.RAINBOW_TRAPDOOR.get(), modLoc("block/rainbow_trapdoor"), true, "cutout");
 
     }
 

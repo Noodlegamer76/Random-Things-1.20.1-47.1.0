@@ -13,6 +13,6 @@ public class BlockEntityInit {
 
     public static final RegistryObject<BlockEntityType<CactusChestBlockEntity>> CACTUS_CHEST = BLOCK_ENTITIES.register("cactus_chest",
             () -> BlockEntityType.Builder.of(CactusChestBlockEntity::new, BlockInit.CACTUS_CHEST.get()).build(null));
-    public static final RegistryObject<BlockEntityType<TntChestBlockEntity>> TNT_CHEST = BLOCK_ENTITIES.register("tnt_chest.json",
+    public static final RegistryObject<BlockEntityType<TntChestBlockEntity>> TNT_CHEST = BLOCK_ENTITIES.register("tnt_chest",
             () -> BlockEntityType.Builder.of(TntChestBlockEntity::new, BlockInit.TNT_CHEST.get()).build(null));
 }

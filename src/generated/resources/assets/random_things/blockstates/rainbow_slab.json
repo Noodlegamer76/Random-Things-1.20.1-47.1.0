@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "random_things:block/rainbow_slab"
+    },
+    "type=double": {
+      "model": "random_things:block/rainbow_planks"
+    },
+    "type=top": {
+      "model": "random_things:block/rainbow_slab_top"
+    }
+  }
+}

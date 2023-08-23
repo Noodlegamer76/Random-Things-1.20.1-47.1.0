@@ -32,6 +32,18 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(BlockInit.STRIPPED_RAINBOW_WOOD.get());
         dropSelf(BlockInit.RAINBOW_PLANKS.get());
         dropSelf(BlockInit.RAINBOW_SAPLING.get());
+        dropSelf(BlockInit.RAINBOW_STAIRS.get());
+        dropSelf(BlockInit.RAINBOW_WALL.get());
+        dropSelf(BlockInit.RAINBOW_FENCE.get());
+        dropSelf(BlockInit.RAINBOW_FENCE_GATE.get());
+        dropSelf(BlockInit.RAINBOW_BUTTON.get());
+        dropSelf(BlockInit.RAINBOW_PRESSURE_PLATE.get());
+        dropSelf(BlockInit.RAINBOW_TRAPDOOR.get());
+
+        this.add(BlockInit.RAINBOW_SLAB.get(),
+                block -> createSlabItemTable(BlockInit.RAINBOW_SLAB.get()));
+        this.add(BlockInit.RAINBOW_DOOR.get(),
+                block -> createDoorTable(BlockInit.RAINBOW_DOOR.get()));
 
         this.add(BlockInit.RAINBOW_LEAVES.get(), (block) ->
                 createLeavesDrops(block, BlockInit.RAINBOW_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES));

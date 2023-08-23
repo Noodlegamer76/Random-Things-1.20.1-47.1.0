@@ -4,12 +4,15 @@ import com.Noodlegamer76.RandomThings.Block.CactusChest;
 import com.Noodlegamer76.RandomThings.Block.ModFlammableRotatedPillarBlock;
 import com.Noodlegamer76.RandomThings.Block.TntChest;
 import com.Noodlegamer76.RandomThings.RandomThingsMod;
+import com.Noodlegamer76.RandomThings.world.tree.RainbowTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -78,7 +81,55 @@ public class BlockInit {
             });
 
     public static final RegistryObject<Block> RAINBOW_SAPLING = BLOCKS.register("rainbow_sapling",
-            () -> new SaplingBlock(null, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+            () -> new SaplingBlock(new RainbowTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> RAINBOW_SLAB = BLOCKS.register("rainbow_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+            });
+    public static final RegistryObject<Block> RAINBOW_STAIRS = BLOCKS.register("rainbow_stairs",
+            () -> new StairBlock(RAINBOW_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+            });
+    public static final RegistryObject<Block> RAINBOW_DOOR = BLOCKS.register("rainbow_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), BlockSetType.OAK));
+    public static final RegistryObject<Block> RAINBOW_BUTTON = BLOCKS.register("rainbow_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.OAK, 20, true));
+    public static final RegistryObject<Block> RAINBOW_PRESSURE_PLATE = BLOCKS.register("rainbow_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.OAK));
+    public static final RegistryObject<Block> RAINBOW_FENCE = BLOCKS.register("rainbow_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+    public static final RegistryObject<Block> RAINBOW_FENCE_GATE = BLOCKS.register("rainbow_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), SoundEvents.FENCE_GATE_OPEN, SoundEvents.FENCE_GATE_CLOSE));
+    public static final RegistryObject<Block> RAINBOW_TRAPDOOR = BLOCKS.register("rainbow_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
+    public static final RegistryObject<Block> RAINBOW_WALL = BLOCKS.register("rainbow_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
 
 
 
