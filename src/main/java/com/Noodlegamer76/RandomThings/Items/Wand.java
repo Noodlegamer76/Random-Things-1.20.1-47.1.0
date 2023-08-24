@@ -1,6 +1,7 @@
 package com.Noodlegamer76.RandomThings.Items;
 
 import com.Noodlegamer76.RandomThings.menus.WandMenu;
+import com.Noodlegamer76.RandomThings.spellcrafting.wand.WandCast;
 import io.netty.buffer.Unpooled;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
@@ -21,8 +22,6 @@ import net.minecraftforge.network.NetworkHooks;
 import javax.annotation.Nullable;
 
 public class Wand extends Item {
-    ItemStack stack;
-    int timesOpened = 0;
     public Wand(Item.Properties properties) {
         super(properties);
     }
@@ -38,12 +37,12 @@ public class Wand extends Item {
         if (player instanceof ServerPlayer serverPlayer) {
             ItemStack item = player.getItemInHand(hand);
 
+
             if (serverPlayer.isCrouching()) {
-                timesOpened += 1;
                 NetworkHooks.openScreen(serverPlayer, new MenuProvider() {
                     @Override
                     public Component getDisplayName() {
-                        return Component.literal(String.valueOf(timesOpened));
+                        return Component.literal(String.valueOf("hello"));
                     }
 
                     @Override
@@ -58,10 +57,8 @@ public class Wand extends Item {
                     buf.writeByte(hand == InteractionHand.MAIN_HAND ? 0 : 1);
                 });
             }
-            if (!level.isClientSide) {
-                if (!player.isCrouching()) {
-
-                }
+            if (!serverPlayer.isCrouching()) {
+                    new WandCast((ServerPlayer)  player, level, item);
             }
         }
 
@@ -80,7 +77,6 @@ public class Wand extends Item {
         if (nbt != null) {
             stack.getCapability(ForgeCapabilities.ITEM_HANDLER, null)
                     .ifPresent(capability -> nbt.put("Inventory", ((ItemStackHandler) capability).serializeNBT()));
-            stack.getOrCreateTag().putInt("times_opened", timesOpened);
         }
         return nbt;
     }
@@ -91,7 +87,6 @@ public class Wand extends Item {
         if (nbt != null) {
             stack.getCapability(ForgeCapabilities.ITEM_HANDLER, null)
                     .ifPresent(capability -> ((ItemStackHandler) capability).deserializeNBT((CompoundTag) nbt.get("Inventory")));
-            timesOpened = stack.getOrCreateTag().getInt("times_opened");
         }
     }
 }

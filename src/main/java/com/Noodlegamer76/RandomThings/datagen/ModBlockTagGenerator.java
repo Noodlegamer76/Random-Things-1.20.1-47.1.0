@@ -1,9 +1,11 @@
 package com.Noodlegamer76.RandomThings.datagen;
 
 import com.Noodlegamer76.RandomThings.init.BlockInit;
+import com.Noodlegamer76.RandomThings.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -55,8 +57,10 @@ public class ModBlockTagGenerator extends BlockTagsProvider  {
 
         this.tag(BlockTags.FENCES)
                 .add(BlockInit.RAINBOW_FENCE.get());
+
         this.tag(BlockTags.FENCE_GATES)
                 .add(BlockInit.RAINBOW_FENCE_GATE.get());
+
         this.tag(BlockTags.WALLS)
                 .add(BlockInit.RAINBOW_WALL.get());
 
@@ -68,6 +72,20 @@ public class ModBlockTagGenerator extends BlockTagsProvider  {
 
         this.tag(BlockTags.BUTTONS)
                 .add(BlockInit.RAINBOW_BUTTON.get());
+
+        this.tag(BlockTags.STAIRS)
+                .add(BlockInit.RAINBOW_STAIRS.get());
+
+        this.tag(BlockTags.SLABS)
+                .add(BlockInit.RAINBOW_SLAB.get());
+
+        this.tag(BlockTags.BUTTONS)
+                .add(BlockInit.RAINBOW_BUTTON.get());
+
+        this.tag(BlockTags.PRESSURE_PLATES)
+                .add(BlockInit.RAINBOW_PRESSURE_PLATE.get());
+
+
 
     }
 }

@@ -1,7 +1,8 @@
-// 1.20.1	2023-08-22T18:23:08.555243	Loot Tables
+// 1.20.1	2023-08-23T12:25:00.9702289	Loot Tables
 a73c235bb32c4131e3b11fa5d1b1b768b240bb4f data/random_things/loot_tables/blocks/brick_small09.json
 9b3823cf6a65aa000f581e82106bc65a938d9db0 data/random_things/loot_tables/blocks/cactus_chest.json
 908c140f3a9402714f39324e64af8c3931d71452 data/random_things/loot_tables/blocks/deepslate_rainbow_ore.json
+98bdef71c9eb324c3f940ee901f3827a3a039283 data/random_things/loot_tables/blocks/quicker_sand.json
 a1bea7baccb8a322a86af0bb6ad81b050af705a4 data/random_things/loot_tables/blocks/quick_sand.json
 1defc5bf8e106be423ebf04f7430efce3176c670 data/random_things/loot_tables/blocks/rainbow_button.json
 7df2a9bad82c8e05c1d92d482ee79c32c224a823 data/random_things/loot_tables/blocks/rainbow_door.json

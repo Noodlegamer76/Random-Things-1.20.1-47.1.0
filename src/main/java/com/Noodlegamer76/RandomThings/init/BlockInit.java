@@ -8,11 +8,15 @@ import com.Noodlegamer76.RandomThings.world.tree.RainbowTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -28,8 +32,15 @@ public class BlockInit {
     public static final RegistryObject<Block> TNT_CHEST = BLOCKS.register("tnt_chest",
             () -> new TntChest(BlockBehaviour.Properties.copy(Blocks.CHEST)));
     public static final RegistryObject<Block> QUICK_SAND = BLOCKS.register("quick_sand",
-            () -> new FallingBlock(BlockBehaviour.Properties.copy(Blocks.SAND)
-            .speedFactor(0.15f).jumpFactor(0.0f)));
+            () -> new FallingWebBlock(BlockBehaviour.Properties.copy(Blocks.SAND)
+            .speedFactor(0.0f).jumpFactor(0.0f).mapColor(MapColor.WOOL).forceSolidOn().noCollission()));
+    public static final RegistryObject<Block> QUICKER_SAND = BLOCKS.register("quicker_sand",
+            () -> new FallingWebBlock(BlockBehaviour.Properties.copy(QUICK_SAND.get())){
+                @Override
+                public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
+                    pEntity.makeStuckInBlock(pState, new Vec3(0.25D, (double)0.025F, 0.25D));
+                }
+            });
 
     public static final RegistryObject<Block> RAINBOW_ORE = BLOCKS.register("rainbow_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)));

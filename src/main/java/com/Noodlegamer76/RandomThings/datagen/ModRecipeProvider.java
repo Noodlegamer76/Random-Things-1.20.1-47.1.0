@@ -1,14 +1,19 @@
 package com.Noodlegamer76.RandomThings.datagen;
 
 import com.Noodlegamer76.RandomThings.init.ItemInit;
+import com.Noodlegamer76.RandomThings.util.ModTags;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 import java.util.function.Consumer;
@@ -22,7 +27,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
         polished(pWriter, RecipeCategory.DECORATIONS, ItemInit.BRICK_SMALL09.get(), Blocks.BRICKS);
 
-        woodFromLogs(pWriter, ItemInit.RAINBOW_WOOD.get(), ItemInit.RAINBOW_LOG.get());
+        planksFromLogs(pWriter, ItemInit.RAINBOW_WOOD.get(), ModTags.Items.RAINBOW_WOOD, 4);
 
 
         fenceBuilder(ItemInit.RAINBOW_FENCE.get(), Ingredient.of(ItemInit.RAINBOW_PLANKS.get()));

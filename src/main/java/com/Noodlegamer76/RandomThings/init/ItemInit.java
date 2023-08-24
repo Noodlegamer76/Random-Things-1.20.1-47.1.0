@@ -3,6 +3,8 @@ package com.Noodlegamer76.RandomThings.init;
 import com.Noodlegamer76.RandomThings.Items.*;
 import com.Noodlegamer76.RandomThings.RandomThingsMod;
 import com.Noodlegamer76.RandomThings.spellcrafting.modifiers.items.ModifierItem;
+import com.Noodlegamer76.RandomThings.spellcrafting.spells.items.CactusSpell;
+import com.Noodlegamer76.RandomThings.spellcrafting.spells.items.ExplosionSpell;
 import com.Noodlegamer76.RandomThings.spellcrafting.spells.items.SpellItem;
 import com.Noodlegamer76.RandomThings.util.ToolTiers;
 import net.minecraft.world.item.*;
@@ -40,6 +42,10 @@ public class ItemInit {
             () -> new ModifierItem(new Item.Properties()));
     public static final RegistryObject<Item> SPELL_ITEM = ITEMS.register("spell_item",
             () -> new SpellItem(new Item.Properties()));
+    public static final RegistryObject<Item> EXPLOSION_SPELL = ITEMS.register("explosion_spell",
+            () -> new ExplosionSpell(new Item.Properties()));
+    public static final RegistryObject<Item> CACTUS_SPELL = ITEMS.register("cactus_spell",
+            () -> new CactusSpell(new Item.Properties()));
 
 
     //BlockItems
@@ -87,5 +93,7 @@ public class ItemInit {
             () -> new BlockItem(BlockInit.RAINBOW_WALL.get(), new Item.Properties()));
     public static final RegistryObject<Item> RAINBOW_TRAPDOOR = ITEMS.register("rainbow_trapdoor",
             () -> new BlockItem(BlockInit.RAINBOW_TRAPDOOR.get(), new Item.Properties()));
+    public static final RegistryObject<Item> QUICKER_SOUND = ITEMS.register("quicker_sand",
+            () -> new BlockItem(BlockInit.QUICKER_SAND.get(), new Item.Properties()));
 
 }

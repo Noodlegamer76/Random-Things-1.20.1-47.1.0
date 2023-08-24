@@ -24,6 +24,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockWithItem(BlockInit.RAINBOW_PLANKS);
         blockWithItem(BlockInit.QUICK_SAND);
+        blockWithItem(BlockInit.QUICKER_SAND);
 
         saplingBlock(BlockInit.RAINBOW_SAPLING);
 

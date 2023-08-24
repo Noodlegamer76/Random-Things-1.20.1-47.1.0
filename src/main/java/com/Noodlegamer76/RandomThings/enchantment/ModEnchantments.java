@@ -16,4 +16,7 @@ public class ModEnchantments {
     public static RegistryObject<Enchantment> EXPLOSION =
             ENCHANTMENTS.register("explosion",
                     () -> new ExplosionEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND));
+    public static RegistryObject<Enchantment> VEIN_MINER =
+            ENCHANTMENTS.register("vein_miner",
+                    () -> new VeinMinerEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentCategory.DIGGER, EquipmentSlot.MAINHAND));
 }

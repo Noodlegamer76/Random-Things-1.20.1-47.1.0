@@ -18,6 +18,7 @@ import net.minecraft.client.Minecraft;
 
 import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
+import java.util.List;
 
 @Mod.EventBusSubscriber(Dist.CLIENT)
 public class WandInventoryCapability implements ICapabilitySerializable<CompoundTag> {

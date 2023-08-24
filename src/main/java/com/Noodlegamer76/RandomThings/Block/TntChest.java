@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.ExplosionDamageCalculator;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -25,7 +26,7 @@ public class TntChest extends ChestBlock {
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult blockHitResult) {
         if (!level.isClientSide()) {
-            level.explode(player, pos.getX(), pos.getY(), pos.getZ(), 16.0F, Level.ExplosionInteraction.TNT);
+            level.explode(null, level.damageSources().explosion(player, player), new ExplosionDamageCalculator(), pos.getX(), pos.getY(), pos.getZ(), 16.0F, false, Level.ExplosionInteraction.TNT);
         }
         return super.use(state, level, pos, player, hand, blockHitResult);
     }

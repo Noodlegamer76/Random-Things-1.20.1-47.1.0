@@ -4,6 +4,7 @@ import com.Noodlegamer76.RandomThings.Events.CreativeTab;
 import com.Noodlegamer76.RandomThings.Events.ClientSetupEvent;
 import com.Noodlegamer76.RandomThings.enchantment.ModEnchantments;
 import com.Noodlegamer76.RandomThings.init.*;
+import com.Noodlegamer76.RandomThings.partcle.ModParticle;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.block.Blocks;
@@ -57,6 +58,7 @@ public class RandomThingsMod
 
         FeaturesInit.FEATURES.register(modEventBus);
         ModEnchantments.ENCHANTMENTS.register(modEventBus);
+        ModParticle.PARTICLE_TYPES.register(modEventBus);
 
         //ModConfiguredFeatures.register(modEventBus);
 

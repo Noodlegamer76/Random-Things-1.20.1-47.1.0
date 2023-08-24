@@ -1,5 +1,5 @@
-// 1.20.1	2023-08-22T18:23:08.5522427	Tags for minecraft:block mod id random_things
-9f41f6ae2beaf8c26be9f5d66f4220ba4619e140 data/minecraft/tags/blocks/buttons.json
+// 1.20.1	2023-08-23T14:28:36.6552724	Tags for minecraft:block mod id random_things
+86a865b26814264e60bf43cf1a5a24ae616a4afb data/minecraft/tags/blocks/buttons.json
 107589d1163799a53aa214bdd82d35da091dd99f data/minecraft/tags/blocks/fences.json
 956ada5dee7eaea054d77513ea1805d38620b0e2 data/minecraft/tags/blocks/fence_gates.json
 d6ea19de33aacd0ea991942c2df97c6dafc98370 data/minecraft/tags/blocks/logs.json
@@ -9,4 +9,7 @@ f98993bd3ec492d5ca57e806bf59e578c840e7fe data/minecraft/tags/blocks/mineable/pic
 10f677449017fcbc0b7fd39a73a98f4761cef2b4 data/minecraft/tags/blocks/mineable/shovel.json
 b4603243a3567c0fb8875d34d6ab8e729118e1fc data/minecraft/tags/blocks/needs_iron_tool.json
 5246f33d2837cfb01f210f4714c667e2a8f5da94 data/minecraft/tags/blocks/planks.json
+0e89605a7f373193c62b80db34b7dfc226121570 data/minecraft/tags/blocks/pressure_plates.json
+52a0b473e3b2bcdaa2e12724edc24cb38474e885 data/minecraft/tags/blocks/slabs.json
+38a57e1c1e35bcd44deb43979616e647e7359fb9 data/minecraft/tags/blocks/stairs.json
 ae90225f824b606d3fcbc508331aee0d82a5ffa0 data/minecraft/tags/blocks/walls.json

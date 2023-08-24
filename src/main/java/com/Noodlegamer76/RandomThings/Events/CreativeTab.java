@@ -35,6 +35,7 @@ public class CreativeTab {
             event.accept(ItemInit.YOUTUBER_PICKAXE);
             event.accept(ItemInit.TNT_CHEST);
             event.accept(ItemInit.QUICK_SAND);
+            event.accept(ItemInit.QUICKER_SOUND);
             event.accept(ItemInit.RAINBOW_ORE);
             event.accept(ItemInit.DEEPSLATE_RAINBOW_ORE);
             event.accept(ItemInit.RAINBOW_LOG);
