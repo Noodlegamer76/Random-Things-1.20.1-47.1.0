@@ -1,7 +1,7 @@
 package com.Noodlegamer76.RandomThings.menus;
 
-import com.Noodlegamer76.RandomThings.spellcrafting.spells.items.SpellItem;
-import com.Noodlegamer76.RandomThings.spellcrafting.modifiers.items.ModifierItem;
+import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.SpellItem;
+import com.Noodlegamer76.RandomThings.spellcrafting.modifier.items.ModifierItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;

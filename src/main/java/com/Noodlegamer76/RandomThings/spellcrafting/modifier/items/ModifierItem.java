@@ -1,4 +1,4 @@
-package com.Noodlegamer76.RandomThings.spellcrafting.modifiers.items;
+package com.Noodlegamer76.RandomThings.spellcrafting.modifier.items;
 
 import net.minecraft.world.item.Item;
 

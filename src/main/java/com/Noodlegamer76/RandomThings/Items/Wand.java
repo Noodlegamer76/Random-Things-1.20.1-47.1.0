@@ -1,6 +1,7 @@
 package com.Noodlegamer76.RandomThings.Items;
 
 import com.Noodlegamer76.RandomThings.menus.WandMenu;
+import com.Noodlegamer76.RandomThings.spellcrafting.wand.CreateWand;
 import com.Noodlegamer76.RandomThings.spellcrafting.wand.WandCast;
 import io.netty.buffer.Unpooled;
 import net.minecraft.nbt.CompoundTag;
@@ -8,6 +9,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.*;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -18,6 +20,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.network.NetworkHooks;
+import org.checkerframework.checker.units.qual.C;
 
 import javax.annotation.Nullable;
 
@@ -36,6 +39,12 @@ public class Wand extends Item {
         double z = player.getZ();
         if (player instanceof ServerPlayer serverPlayer) {
             ItemStack item = player.getItemInHand(hand);
+
+            CompoundTag nbt = item.getOrCreateTag();
+            if (!nbt.contains("isCreated")) {
+                new CreateWand().createStats(nbt);
+            }
+
 
 
             if (serverPlayer.isCrouching()) {
@@ -58,7 +67,7 @@ public class Wand extends Item {
                 });
             }
             if (!serverPlayer.isCrouching()) {
-                    new WandCast((ServerPlayer)  player, level, item);
+                    new WandCast(level, (ServerPlayer)  player, item);
             }
         }
 

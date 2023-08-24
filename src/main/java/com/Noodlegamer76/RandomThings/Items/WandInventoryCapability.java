@@ -23,6 +23,7 @@ import java.util.List;
 @Mod.EventBusSubscriber(Dist.CLIENT)
 public class WandInventoryCapability implements ICapabilitySerializable<CompoundTag> {
     boolean isCreated;
+    CompoundTag stats;
 
     public static final Capability<WandInventoryCapability> WAND_INVENTORY_CAPABILITY =
             CapabilityManager.get(new CapabilityToken<WandInventoryCapability>(){});
@@ -35,6 +36,8 @@ public class WandInventoryCapability implements ICapabilitySerializable<Compound
                 Minecraft.getInstance().player.closeContainer();
             }
         }
+    }
+    public WandInventoryCapability() {
     }
 
     private final LazyOptional<ItemStackHandler> inventory = LazyOptional.of(this::createItemHandler);
