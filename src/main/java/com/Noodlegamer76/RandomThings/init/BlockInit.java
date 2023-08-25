@@ -1,6 +1,7 @@
 package com.Noodlegamer76.RandomThings.init;
 
 import com.Noodlegamer76.RandomThings.Block.CactusChest;
+import com.Noodlegamer76.RandomThings.Block.FallingWebBlock;
 import com.Noodlegamer76.RandomThings.Block.ModFlammableRotatedPillarBlock;
 import com.Noodlegamer76.RandomThings.Block.TntChest;
 import com.Noodlegamer76.RandomThings.RandomThingsMod;

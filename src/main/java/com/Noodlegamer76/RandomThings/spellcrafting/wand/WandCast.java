@@ -1,22 +1,27 @@
 package com.Noodlegamer76.RandomThings.spellcrafting.wand;
 
 import com.Noodlegamer76.RandomThings.spellcrafting.modifier.items.ModifierItem;
+import com.Noodlegamer76.RandomThings.spellcrafting.modifier.items.TestModifierItem;
+import com.Noodlegamer76.RandomThings.spellcrafting.modifier.modifier.Modifiers;
+import com.Noodlegamer76.RandomThings.spellcrafting.modifier.modifier.TestModifier;
+import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.CactusSpellItem;
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.ExplosionSpellItem;
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.SpellItem;
+import com.Noodlegamer76.RandomThings.spellcrafting.spell.spells.CactusSpell;
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.spells.ExplosionSpell;
-import com.Noodlegamer76.RandomThings.spellcrafting.spell.spells.Spell;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 
+import java.util.ArrayList;
+
 public class WandCast {
     IItemHandler handler;
-    CompoundTag nbt = new CompoundTag();
+    CompoundTag nbt;
 
     int casts = 1;
     //how many spells are cast every time the players activates the spell
@@ -36,6 +41,9 @@ public class WandCast {
     int capacity = 27;
     //how many slots are available to put spells and modifiers into
 
+    ArrayList<Modifiers> modifiers = new ArrayList<>();
+
+    boolean shouldCast = true;
 
 
     public WandCast(Level level, ServerPlayer  player, ItemStack castItem) {
@@ -46,31 +54,60 @@ public class WandCast {
         iItemHandler.ifPresent(this::setHandler);
         nbt = castItem.getTag();
 
-        //get get which slot the cast should start at and get which item is in the current slot
-        int slot = nbt.getInt("slot");
-        ItemStack current = handler.getStackInSlot(slot);
+        //get which slot the cast should start at and get which item is in the current slot
+        capacity = nbt.getInt("capacity");
 
-        //get instance here
-        
+        castSpell(level, player, castItem);
 
-        //updates or resets which slot the wand should start on
+    }
+
+    public void castSpell(Level level, ServerPlayer  player, ItemStack castItem) {
+        while (shouldCast) {
+            int slot = nbt.getInt("slot");
+            ItemStack current = handler.getStackInSlot(slot);
+
+
+            if (current.getItem() instanceof  ModifierItem) {
+                if (current.getItem() instanceof TestModifierItem) {
+                    System.out.println("TEST MOD");
+                    modifiers.add(new TestModifier());
+                }
+            }
+
+
+            else if (current.getItem() instanceof SpellItem) {
+
+                if (current.getItem() instanceof ExplosionSpellItem) {
+                    System.out.println("EXPLOSION SPELL ITEM");
+                    new ExplosionSpell(level, player, castItem, modifiers);
+                }
+
+                else if (current.getItem() instanceof CactusSpellItem) {
+                    System.out.println("CACTUS SPELL ITEM");
+                    new CactusSpell(level, player, castItem, modifiers);
+                }
+                casts--;
+            }
+
+            System.out.println(slot);
+
+            setSlot(slot);
+            if (casts <= 0) {
+                shouldCast = false;
+            }
+        }
+    }
+
+    //updates or resets which slot the wand should start on
+    private void setSlot(int slot) {
         if (slot + 1 >= capacity) {
             nbt.putInt("slot", 0);
+            shouldCast = false;
+            System.out.println("RESET");
         }
         else {
             nbt.putInt("slot", slot + 1);
         }
-
-
-
-        cast(level, player, castItem);
-
-    }
-
-    public void cast(Level level, ServerPlayer player, ItemStack castItem) {
-        Item item = handler.getStackInSlot(0).getItem();
-        capacity = nbt.getInt("capacity");
-
     }
 
     public void setHandler(IItemHandler handler) {

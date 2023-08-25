@@ -3,9 +3,11 @@ package com.Noodlegamer76.RandomThings.init;
 import com.Noodlegamer76.RandomThings.Items.*;
 import com.Noodlegamer76.RandomThings.RandomThingsMod;
 import com.Noodlegamer76.RandomThings.spellcrafting.modifier.items.ModifierItem;
+import com.Noodlegamer76.RandomThings.spellcrafting.modifier.items.TestModifierItem;
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.CactusSpellItem;
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.ExplosionSpellItem;
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.SpellItem;
+import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.TntSpellItem;
 import com.Noodlegamer76.RandomThings.util.ToolTiers;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
@@ -40,12 +42,16 @@ public class ItemInit {
 
     public static final RegistryObject<Item> MODIFIER_ITEM = ITEMS.register("modifier_item",
             () -> new ModifierItem(new Item.Properties()));
+    public static final RegistryObject<Item> TEST_MODIFIER = ITEMS.register("test_modifier",
+            () -> new TestModifierItem(new Item.Properties()));
     public static final RegistryObject<Item> SPELL_ITEM = ITEMS.register("spell_item",
             () -> new SpellItem(new Item.Properties()));
     public static final RegistryObject<Item> EXPLOSION_SPELL = ITEMS.register("explosion_spell",
             () -> new ExplosionSpellItem(new Item.Properties()));
     public static final RegistryObject<Item> CACTUS_SPELL = ITEMS.register("cactus_spell",
             () -> new CactusSpellItem(new Item.Properties()));
+    public static final RegistryObject<Item> TNT_LAUNCH_SPELL = ITEMS.register("tnt_launch_spell",
+            () -> new TntSpellItem(new Item.Properties()));
 
 
     //BlockItems

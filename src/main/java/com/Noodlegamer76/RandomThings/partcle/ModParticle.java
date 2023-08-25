@@ -13,5 +13,5 @@ public class ModParticle {
     public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(Registries.PARTICLE_TYPE, RandomThingsMod.MODID);
 
     public static final RegistryObject<SimpleParticleType> CONFETTI =
-            PARTICLE_TYPES.register("confetti", () -> new SimpleParticleType(true));
+            PARTICLE_TYPES.register("confetti_particles", () -> new SimpleParticleType(true));
 }

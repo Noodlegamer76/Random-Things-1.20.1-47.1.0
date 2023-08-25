@@ -1,8 +1,12 @@
 package com.Noodlegamer76.RandomThings.spellcrafting.spell.spells;
 
+import com.Noodlegamer76.RandomThings.spellcrafting.modifier.modifier.Modifiers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+
+import javax.annotation.Nullable;
+import java.util.ArrayList;
 
 public class Spell {
 
@@ -20,11 +24,18 @@ public class Spell {
     Level level;
     ServerPlayer player;
     ItemStack castItem;
+    ArrayList modifiers;
 
-    public Spell(Level level, ServerPlayer player, ItemStack castItem){
+    public Spell(Level level, ServerPlayer player, ItemStack castItem, ArrayList<Modifiers> modifiers){
         this.level = level;
         this.player = player;
         this.castItem = castItem;
+        this.modifiers = modifiers;
+        this.calculate();
+        this.activate();
+    }
+
+    public void calculate() {
     }
 
     public void activate() {

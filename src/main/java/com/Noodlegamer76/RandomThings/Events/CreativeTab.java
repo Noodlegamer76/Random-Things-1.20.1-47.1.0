@@ -54,6 +54,9 @@ public class CreativeTab {
             event.accept(ItemInit.RAINBOW_BUTTON);
             event.accept(ItemInit.RAINBOW_PRESSURE_PLATE);
             event.accept(ItemInit.RAINBOW_TRAPDOOR);
+            event.accept(ItemInit.TEST_MODIFIER);
+            event.accept(ItemInit.CACTUS_SPELL);
+            event.accept(ItemInit.EXPLOSION_SPELL);
         }
     }
 }

@@ -1,7 +1,16 @@
 package com.Noodlegamer76.RandomThings.Items;
 
+import com.Noodlegamer76.RandomThings.Entities.FireBall;
+import com.Noodlegamer76.RandomThings.init.EntityInit;
+import com.Noodlegamer76.RandomThings.partcle.ModParticle;
+import com.Noodlegamer76.RandomThings.partcle.custom.ConfettiParticles;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
@@ -53,5 +62,20 @@ public class YoutuberPickaxe extends PickaxeItem {
    //    }
    //}
         return true;
+    }
+
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+        if (!pLevel.isClientSide) {
+         //   FireBall fireBall = new FireBall(EntityInit.FIRE_BALL.get(), pPlayer, pLevel);
+         //   fireBall.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0F, 3.0F, 1.0F);
+         //   pLevel.addFreshEntity(fireBall);
+
+
+        }
+        for(int i = 0; i < 1000; i++) {
+            pLevel.addParticle(ModParticle.CONFETTI.get(),pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5 );
+        }
+        return super.use(pLevel, pPlayer, pUsedHand);
     }
 }

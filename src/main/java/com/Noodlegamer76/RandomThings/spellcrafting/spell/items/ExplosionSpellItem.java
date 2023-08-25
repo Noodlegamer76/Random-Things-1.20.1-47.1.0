@@ -14,10 +14,6 @@ public class ExplosionSpellItem extends SpellItem {
     public ExplosionSpellItem(Properties properties) {
         super(properties);
     }
-    @Override
-    public static Spell getSpell(Level level, ServerPlayer  player, ItemStack stack) {
-        return new ExplosionSpell(level, player, stack);
-    }
 
 
 }

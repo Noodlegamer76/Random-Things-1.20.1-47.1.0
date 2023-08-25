@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 public class ModdedModelLayers extends ModelLayers {
     @OnlyIn(Dist.CLIENT)
     private static final Set<ModelLayerLocation> MOD_MODELS = Sets.newHashSet();
-    public static final ModelLayerLocation MAGIC_MISSILE = register("magic_missile");
+    public static final ModelLayerLocation FIRE_BALL = register("fire_ball");
 
 
     private static ModelLayerLocation register(String p_171294_) {

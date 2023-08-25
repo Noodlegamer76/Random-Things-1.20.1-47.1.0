@@ -11,7 +11,5 @@ public class SpellItem extends Item {
         super(properties);
     }
 
-    public static Spell getSpell(Level level, ServerPlayer player, ItemStack stack) {
-        return new Spell(level, player, stack);
-    }
+
 }
