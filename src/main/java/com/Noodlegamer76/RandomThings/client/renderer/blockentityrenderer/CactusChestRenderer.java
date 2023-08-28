@@ -60,6 +60,7 @@ public class CactusChestRenderer extends ChestRenderer {
 
 
 
+
         blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(h -> {
             ItemStack stack = Items.DIAMOND.getDefaultInstance();
             if (!stack.isEmpty()) {

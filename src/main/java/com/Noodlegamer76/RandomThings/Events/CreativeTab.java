@@ -57,6 +57,7 @@ public class CreativeTab {
             event.accept(ItemInit.TEST_MODIFIER);
             event.accept(ItemInit.CACTUS_SPELL);
             event.accept(ItemInit.EXPLOSION_SPELL);
+            event.accept(ItemInit.TNT_LAUNCH_SPELL);
         }
     }
 }

@@ -7,8 +7,10 @@ import com.Noodlegamer76.RandomThings.spellcrafting.modifier.modifier.TestModifi
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.CactusSpellItem;
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.ExplosionSpellItem;
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.SpellItem;
+import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.TntSpellItem;
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.spells.CactusSpell;
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.spells.ExplosionSpell;
+import com.Noodlegamer76.RandomThings.spellcrafting.spell.spells.TntSpell;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
@@ -85,6 +87,11 @@ public class WandCast {
                 else if (current.getItem() instanceof CactusSpellItem) {
                     System.out.println("CACTUS SPELL ITEM");
                     new CactusSpell(level, player, castItem, modifiers);
+                }
+
+                else if (current.getItem() instanceof TntSpellItem) {
+                    System.out.println("TNT SPELL");
+                    new TntSpell(level, player, castItem, modifiers);
                 }
                 casts--;
             }

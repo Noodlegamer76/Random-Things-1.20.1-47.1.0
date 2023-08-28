@@ -2,11 +2,14 @@ package com.Noodlegamer76.RandomThings;
 
 import com.Noodlegamer76.RandomThings.Events.CreativeTab;
 import com.Noodlegamer76.RandomThings.Events.ClientSetupEvent;
+import com.Noodlegamer76.RandomThings.Events.EntityRenderer;
+import com.Noodlegamer76.RandomThings.client.renderer.BEWLR.BEWLR;
 import com.Noodlegamer76.RandomThings.enchantment.ModEnchantments;
 import com.Noodlegamer76.RandomThings.init.*;
 import com.Noodlegamer76.RandomThings.partcle.ModParticle;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -39,6 +42,8 @@ public class RandomThingsMod
     // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
     //public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties()));
 
+
+
     public RandomThingsMod()
     {
 
@@ -49,10 +54,18 @@ public class RandomThingsMod
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-        ItemInit.ITEMS.register(modEventBus);
-        BlockInit.BLOCKS.register(modEventBus);
+
+        //ClientSide events
+        if (FMLEnvironment.dist == Dist.CLIENT)
+        {
+            modEventBus.register(new ClientSetupEvent());
+
+        }
+
         EntityInit.ENTITIES.register(modEventBus);
         BlockEntityInit.BLOCK_ENTITIES.register(modEventBus);
+        ItemInit.ITEMS.register(modEventBus);
+        BlockInit.BLOCKS.register(modEventBus);
         MenuTypeInit.MENU_TYPES.register(modEventBus);
         CreativeTabInit.CREATIVE_TABS.register(modEventBus);
 
@@ -64,12 +77,12 @@ public class RandomThingsMod
 
         modEventBus.register(new CreativeTab());
 
-        //ClientSide events
-        if (FMLEnvironment.dist == Dist.CLIENT)
-        {
-            modEventBus.register(new ClientSetupEvent());
 
-        }
+
+
+
+
+
 
 
 
@@ -89,6 +102,7 @@ public class RandomThingsMod
     {
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
+
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
     }
 
@@ -113,7 +127,9 @@ public class RandomThingsMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+
             // Some client setup code
+
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }

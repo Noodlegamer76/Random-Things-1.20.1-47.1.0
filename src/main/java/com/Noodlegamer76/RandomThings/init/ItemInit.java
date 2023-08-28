@@ -9,6 +9,7 @@ import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.ExplosionSpellIt
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.SpellItem;
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.TntSpellItem;
 import com.Noodlegamer76.RandomThings.util.ToolTiers;
+import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -101,5 +102,6 @@ public class ItemInit {
             () -> new BlockItem(BlockInit.RAINBOW_TRAPDOOR.get(), new Item.Properties()));
     public static final RegistryObject<Item> QUICKER_SOUND = ITEMS.register("quicker_sand",
             () -> new BlockItem(BlockInit.QUICKER_SAND.get(), new Item.Properties()));
+
 
 }

@@ -1,5 +1,6 @@
 package com.Noodlegamer76.RandomThings.client;
 
+import com.Noodlegamer76.RandomThings.RandomThingsMod;
 import com.google.common.collect.Sets;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelLayers;
@@ -16,6 +17,7 @@ public class ModdedModelLayers extends ModelLayers {
     @OnlyIn(Dist.CLIENT)
     private static final Set<ModelLayerLocation> MOD_MODELS = Sets.newHashSet();
     public static final ModelLayerLocation FIRE_BALL = register("fire_ball");
+    public static final ModelLayerLocation THROWN_TNT = new ModelLayerLocation(new ResourceLocation(RandomThingsMod.MODID, "thrown_tnt_model"), "main");
 
 
     private static ModelLayerLocation register(String p_171294_) {

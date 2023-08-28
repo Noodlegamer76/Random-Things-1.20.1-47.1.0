@@ -1,6 +1,6 @@
-package com.Noodlegamer76.RandomThings.client.renderer;
+package com.Noodlegamer76.RandomThings.client.renderer.entity.projectiles;
 
-import com.Noodlegamer76.RandomThings.Entities.FireBall;
+import com.Noodlegamer76.RandomThings.Entities.projectiles.FireBall;
 import com.Noodlegamer76.RandomThings.RandomThingsMod;
 import com.Noodlegamer76.RandomThings.client.models.FireBallModel;
 import com.mojang.blaze3d.vertex.PoseStack;
