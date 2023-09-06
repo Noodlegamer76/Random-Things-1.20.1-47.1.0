@@ -56,7 +56,10 @@ public class BEWLR extends BlockEntityWithoutLevelRenderer {
             i = OverlayTexture.NO_OVERLAY;
         }
 
-        SpinPoseStack.spinPoseStack(1F,TntSpellItem.rotation, poseStack);
+        poseStack.scale(0.5f, 0.5f, 0.5f);
+       // poseStack.translate(0, 0.5, 0);
+       // SpinPoseStack.spinPoseStack(1F,TntSpellItem.rotation, poseStack);
+       // poseStack.translate(0, -1, 0);
 
         this.thrownTntModel.renderToBuffer(poseStack, vertexconsumer, pPackedLight, i, 1.0F, 1.0F, 1.0F, 1.0F);
 

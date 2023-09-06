@@ -47,7 +47,9 @@ public class ThrownTntRenderer extends EntityRenderer<ThrownTntEntity> {
             i = OverlayTexture.NO_OVERLAY;
         }
 
+        poseStack.translate(0, 0.5, 0);
         SpinPoseStack.spinPoseStack(entity, poseStack);
+        poseStack.translate(0, -0.5, 0);
 
         this.model.renderToBuffer(poseStack, vertexconsumer, pPackedLight, i, 1.0F, 1.0F, 1.0F, 1.0F);
 

@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_logs": {
+    "has_rainbow_planks": {
       "conditions": {
         "items": [
           {
-            "tag": "random_things:rainbow_logs"
+            "items": [
+              "random_things:rainbow_planks"
+            ]
           }
         ]
       },
@@ -13,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "random_things:rainbow_wood"
+        "recipe": "random_things:rainbow_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_logs",
+      "has_rainbow_planks",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "random_things:rainbow_wood"
+      "random_things:rainbow_slab"
     ]
   },
   "sends_telemetry_event": false

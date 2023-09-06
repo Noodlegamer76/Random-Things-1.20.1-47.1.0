@@ -21,15 +21,6 @@ public class ClientSetupEvent {
     public static BEWLR bewlr = new BEWLR();
     @SubscribeEvent
     void clientSetup(FMLClientSetupEvent event) {
-        event.enqueueWork(
-                // Assume RegistryObject<MenuType<MyMenu>> MY_MENU
-                // Assume MyContainerScreen<MyMenu> which takes in three parameters
-                () -> MenuScreens.register(MenuTypeInit.WAND_MENU.get(), WandScreen::new));
-
-        MeshDefinition meshdefinition = new MeshDefinition();
-        PartDefinition partdefinition = meshdefinition.getRoot();
-
-        PartDefinition bb_main = partdefinition.addOrReplaceChild("bb_main", CubeListBuilder.create().texOffs(0, 0).addBox(-8.0F, 0.0F, -8.0F, 16.0F, 16.0F, 16.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
 
 

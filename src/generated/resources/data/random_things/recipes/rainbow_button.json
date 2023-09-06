@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "random_things:rainbow_planks"
+    }
+  ],
+  "result": {
+    "item": "random_things:rainbow_button"
+  }
+}

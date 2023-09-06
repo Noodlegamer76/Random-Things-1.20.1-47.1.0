@@ -6,9 +6,16 @@ import com.Noodlegamer76.RandomThings.Events.EntityRenderer;
 import com.Noodlegamer76.RandomThings.client.renderer.BEWLR.BEWLR;
 import com.Noodlegamer76.RandomThings.enchantment.ModEnchantments;
 import com.Noodlegamer76.RandomThings.init.*;
+import com.Noodlegamer76.RandomThings.menus.WandScreen;
 import com.Noodlegamer76.RandomThings.partcle.ModParticle;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.model.geom.PartPose;
+import net.minecraft.client.model.geom.builders.CubeDeformation;
+import net.minecraft.client.model.geom.builders.CubeListBuilder;
+import net.minecraft.client.model.geom.builders.MeshDefinition;
+import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -54,13 +61,6 @@ public class RandomThingsMod
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-
-        //ClientSide events
-        if (FMLEnvironment.dist == Dist.CLIENT)
-        {
-            modEventBus.register(new ClientSetupEvent());
-
-        }
 
         EntityInit.ENTITIES.register(modEventBus);
         BlockEntityInit.BLOCK_ENTITIES.register(modEventBus);
@@ -127,6 +127,17 @@ public class RandomThingsMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+
+            event.enqueueWork(
+                    // Assume RegistryObject<MenuType<MyMenu>> MY_MENU
+                    // Assume MyContainerScreen<MyMenu> which takes in three parameters
+                    () -> MenuScreens.register(MenuTypeInit.WAND_MENU.get(), WandScreen::new));
+
+            MeshDefinition meshdefinition = new MeshDefinition();
+            PartDefinition partdefinition = meshdefinition.getRoot();
+
+            PartDefinition bb_main = partdefinition.addOrReplaceChild("bb_main", CubeListBuilder.create().texOffs(0, 0).addBox(-8.0F, 0.0F, -8.0F, 16.0F, 16.0F, 16.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+
 
             // Some client setup code
 

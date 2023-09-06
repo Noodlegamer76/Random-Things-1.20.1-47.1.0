@@ -1,0 +1,14 @@
+// 1.20.1	2023-08-31T12:25:10.9305768	Tags for minecraft:item mod id random_things
+9f41f6ae2beaf8c26be9f5d66f4220ba4619e140 data/minecraft/tags/items/buttons.json
+5a371f6534d7c4a3712d153372cf669a7af82ced data/minecraft/tags/items/doors.json
+107589d1163799a53aa214bdd82d35da091dd99f data/minecraft/tags/items/fences.json
+956ada5dee7eaea054d77513ea1805d38620b0e2 data/minecraft/tags/items/fence_gates.json
+d6ea19de33aacd0ea991942c2df97c6dafc98370 data/minecraft/tags/items/logs.json
+ef887033847e6b2bc6a50e201b3a85c96bce2300 data/minecraft/tags/items/pickaxes.json
+5246f33d2837cfb01f210f4714c667e2a8f5da94 data/minecraft/tags/items/planks.json
+42e720a6c6f1b0e74645fec5202676f9d04b01eb data/minecraft/tags/items/shovels.json
+52a0b473e3b2bcdaa2e12724edc24cb38474e885 data/minecraft/tags/items/slabs.json
+38a57e1c1e35bcd44deb43979616e647e7359fb9 data/minecraft/tags/items/stairs.json
+5109ea5f97d53bc54eea7bd423401702c876182f data/minecraft/tags/items/swords.json
+ae90225f824b606d3fcbc508331aee0d82a5ffa0 data/minecraft/tags/items/walls.json
+6ac95833cb2bbe613f4ecb875971dc601f68cc02 data/random_things/tags/items/rainbow_logs.json

@@ -1,5 +1,6 @@
 package com.Noodlegamer76.RandomThings.datagen;
 
+import com.Noodlegamer76.RandomThings.RandomThingsMod;
 import com.Noodlegamer76.RandomThings.init.BlockInit;
 import com.Noodlegamer76.RandomThings.init.ItemInit;
 import com.Noodlegamer76.RandomThings.util.ModTags;
@@ -9,12 +10,15 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.data.ExistingFileHelper;
 
+import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class ModItemTagGenerator extends ItemTagsProvider {
-    public ModItemTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, CompletableFuture<TagLookup<Block>> pBlockTags) {
-        super(pOutput, pLookupProvider, pBlockTags);
+    public ModItemTagGenerator(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> providerCompletableFuture,
+                               CompletableFuture<TagLookup<Block>> tagLookupCompletableFuture, @Nullable ExistingFileHelper existingFileHelper) {
+        super(packOutput, providerCompletableFuture, tagLookupCompletableFuture, RandomThingsMod.MODID, existingFileHelper);
     }
 
     @Override
