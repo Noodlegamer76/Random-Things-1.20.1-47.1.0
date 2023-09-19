@@ -49,9 +49,8 @@ public class ModConfiguredFeatures {
 
         register(context, RAINBOW_ORE, Feature.ORE, new OreConfiguration(
                 List.of(OreConfiguration.target(ruletest1, BlockInit.RAINBOW_ORE.get().defaultBlockState()),
-                        OreConfiguration.target(ruletest2, BlockInit.DEEPSLATE_RAINBOW_ORE.get().defaultBlockState()),
-                        OreConfiguration.target(airTest, Blocks.OAK_LOG.defaultBlockState())),
-                3, 0.7f));
+                        OreConfiguration.target(ruletest2, BlockInit.DEEPSLATE_RAINBOW_ORE.get().defaultBlockState())),
+                4));
 
     }
 

@@ -32,7 +32,7 @@ public class ModPlacedFeatures {
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), BlockInit.RAINBOW_SAPLING.get()));
 
         register(context, RAINBOW_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.RAINBOW_ORE),
-                commonOrePlacement(1, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
+                commonOrePlacement(3, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
     }
 
 
