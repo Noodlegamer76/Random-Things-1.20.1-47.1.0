@@ -12,6 +12,6 @@ public class RainbowOre extends Feature<OreConfiguration> {
 
     @Override
     public boolean place(FeaturePlaceContext<OreConfiguration> pContext) {
-        return true;
+        return false;
     }
 }

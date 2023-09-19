@@ -6,6 +6,7 @@ import com.Noodlegamer76.RandomThings.menus.WandScreen;
 import com.Noodlegamer76.RandomThings.init.MenuTypeInit;
 import com.Noodlegamer76.RandomThings.partcle.ModParticle;
 import com.Noodlegamer76.RandomThings.partcle.custom.ConfettiParticles;
+import com.Noodlegamer76.RandomThings.partcle.custom.CubePartcles;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.geom.PartPose;
@@ -31,5 +32,7 @@ public class ClientSetupEvent {
     void RegisterParticleProviders(RegisterParticleProvidersEvent event) {
         Minecraft.getInstance().particleEngine.register(ModParticle.CONFETTI.get(),
                 ConfettiParticles.Provider::new);
+        Minecraft.getInstance().particleEngine.register(ModParticle.CUBE.get(),
+                CubePartcles.Provider::new);
     }
 }

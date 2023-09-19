@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:ore",
+  "config": {
+    "discard_chance_on_air_exposure": 0.7,
+    "size": 3,
+    "targets": [
+      {
+        "state": {
+          "Name": "random_things:rainbow_ore"
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:stone_ore_replaceables"
+        }
+      },
+      {
+        "state": {
+          "Name": "random_things:deepslate_rainbow_ore"
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:deepslate_ore_replaceables"
+        }
+      },
+      {
+        "state": {
+          "Name": "minecraft:oak_log",
+          "Properties": {
+            "axis": "y"
+          }
+        },
+        "target": {
+          "block": "minecraft:air",
+          "predicate_type": "minecraft:block_match"
+        }
+      }
+    ]
+  }
+}

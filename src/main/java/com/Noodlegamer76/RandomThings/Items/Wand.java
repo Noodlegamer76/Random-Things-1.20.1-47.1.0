@@ -51,7 +51,7 @@ public class Wand extends Item {
                 NetworkHooks.openScreen(serverPlayer, new MenuProvider() {
                     @Override
                     public Component getDisplayName() {
-                        return Component.literal(String.valueOf("hello"));
+                        return Component.literal("hello");
                     }
 
                     @Override
