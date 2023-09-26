@@ -2,10 +2,10 @@
 
 import com.example.examplemod.init.BlockEntityInit;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.EntityBlock;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.Block.Block;
+import net.minecraft.world.level.Block.EntityBlock;
+import net.minecraft.world.level.Block.entity.BlockEntity;
+import net.minecraft.world.level.Block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
 public class TempBlock extends Block implements EntityBlock {

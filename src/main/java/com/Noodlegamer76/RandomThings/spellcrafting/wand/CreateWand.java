@@ -1,7 +1,6 @@
 package com.Noodlegamer76.RandomThings.spellcrafting.wand;
 
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.item.ItemStack;
 
 public class CreateWand {
     float castDelay = 20;

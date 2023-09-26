@@ -62,7 +62,7 @@ public class WandMenu extends AbstractContainerMenu implements Supplier<Map<Inte
                         this.internal = capability;
                         this.bound = true;
                     });
-            } else { // might be bound to block
+            } else { // might be bound to Block
                 BlockEntity ent = inv.player != null ? inv.player.level().getBlockEntity(pos) : null;
                 if (ent != null) {
                     ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {

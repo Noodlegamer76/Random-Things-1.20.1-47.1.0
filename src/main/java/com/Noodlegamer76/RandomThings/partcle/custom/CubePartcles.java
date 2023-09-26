@@ -1,6 +1,6 @@
 package com.Noodlegamer76.RandomThings.partcle.custom;
 
-import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.blaze3d.vertex.*;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
@@ -8,7 +8,7 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class CubePartcles extends Particle {
+public class CubePartcles extends TextureSheetParticle {
 
     protected CubePartcles(ClientLevel pLevel, double pX, double pY, double pZ, SpriteSet spriteSet, double pXSpeed, double pYSpeed, double pZSpeed) {
         super(pLevel, pX, pY, pZ, pXSpeed, pYSpeed, pZSpeed);
@@ -26,13 +26,12 @@ public class CubePartcles extends Particle {
     }
 
     @Override
-    public void tick() {
-        super.tick();
+    public void render(VertexConsumer pBuffer, Camera pRenderInfo, float pPartialTicks) {
     }
 
     @Override
-    public void render(VertexConsumer pBuffer, Camera pRenderInfo, float pPartialTicks) {
-
+    public void tick() {
+        super.tick();
     }
 
     @Override
@@ -52,7 +51,7 @@ public class CubePartcles extends Particle {
         public Particle createParticle(SimpleParticleType particleType, ClientLevel level,
                                        double x, double y, double z,
                                        double dx, double dy, double dz) {
-            return new ConfettiParticles(level, x, y, z, this.sprites, dx, dy, dz);
+            return new CubePartcles(level, x, y, z, this.sprites, dx, dy, dz);
         }
     }
 }

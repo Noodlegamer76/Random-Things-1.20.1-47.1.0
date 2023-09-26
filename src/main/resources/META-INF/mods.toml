@@ -43,7 +43,7 @@ description='''mod
 descriuption
 
 
-hello uwu'''
+hello'''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.random_things]] #optional
     # the modid of the dependency

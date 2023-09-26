@@ -145,4 +145,9 @@ public class BlockInit {
 
 
 
+    public static final RegistryObject<Block> CRYSTALLIZED_STONE = BLOCKS.register("crystallized_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK)));
+
+
+
 }

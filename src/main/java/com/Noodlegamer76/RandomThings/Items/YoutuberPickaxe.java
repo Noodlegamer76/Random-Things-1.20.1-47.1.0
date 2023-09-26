@@ -1,8 +1,5 @@
 package com.Noodlegamer76.RandomThings.Items;
 
-import com.Noodlegamer76.RandomThings.Entities.projectiles.FireBall;
-import com.Noodlegamer76.RandomThings.Entities.projectiles.ThrownTntEntity;
-import com.Noodlegamer76.RandomThings.init.EntityInit;
 import com.Noodlegamer76.RandomThings.partcle.ModParticle;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -60,17 +57,19 @@ public class YoutuberPickaxe extends PickaxeItem {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
-        if (!pLevel.isClientSide) {
-            ThrownTntEntity thrownTnt = new ThrownTntEntity(EntityInit.THROWN_TNT.get(), pPlayer, pLevel, 4.0f);
-            thrownTnt.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0F, 3.0F, 1.0F);
-            pLevel.addFreshEntity(thrownTnt);
+      //  if (!pLevel.isClientSide) {
+      //      ThrownTntEntity thrownTnt = new ThrownTntEntity(EntityInit.THROWN_TNT.get(), pPlayer, pLevel, 4.0f);
+      //      thrownTnt.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0F, 3.0F, 1.0F);
+      //      pLevel.addFreshEntity(thrownTnt);
+      //  }
 
 
-            //  }
-            //  for(int i = 0; i < 1000; i++) {
-            //      pLevel.addParticle(ModParticle.CONFETTI.get(),pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5 );
-            //  }
-        }
+
+             if(pLevel.isClientSide) {
+                 for(int i = 0; i < 1000; i++) {
+                     pLevel.addParticle(ModParticle.CUBE.get(),pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5 );
+                 }
+             }
         return super.use(pLevel, pPlayer, pUsedHand);
     }
 }

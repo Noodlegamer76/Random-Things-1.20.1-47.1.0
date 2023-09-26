@@ -1,8 +1,6 @@
 package com.Noodlegamer76.RandomThings.partcle;
 
 import com.Noodlegamer76.RandomThings.RandomThingsMod;
-import com.Noodlegamer76.RandomThings.partcle.custom.ConfettiParticles;
-import net.minecraft.client.particle.Particle;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.registries.Registries;

@@ -1,10 +1,8 @@
 package com.Noodlegamer76.RandomThings.client.renderer.entity.projectiles;
 
-import com.Noodlegamer76.RandomThings.Entities.projectiles.FireBall;
 import com.Noodlegamer76.RandomThings.Entities.projectiles.ThrownTntEntity;
-import com.Noodlegamer76.RandomThings.Events.ClientSetupEvent;
+import com.Noodlegamer76.RandomThings.Events.RegisterParticleProviders;
 import com.Noodlegamer76.RandomThings.RandomThingsMod;
-import com.Noodlegamer76.RandomThings.client.models.FireBallModel;
 import com.Noodlegamer76.RandomThings.client.models.ThrownTntModel;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -13,7 +11,6 @@ import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -25,7 +22,7 @@ public class ThrownTntRenderer extends EntityRenderer<ThrownTntEntity> {
     public ThrownTntRenderer(EntityRendererProvider.Context manager) {
         super(manager);
         this.model = new ThrownTntModel<>(manager.bakeLayer(ThrownTntModel.LAYER_LOCATION));
-        ClientSetupEvent.bewlr.setThrownTntModel(this.model);
+        RegisterParticleProviders.bewlr.setThrownTntModel(this.model);
     }
 
 

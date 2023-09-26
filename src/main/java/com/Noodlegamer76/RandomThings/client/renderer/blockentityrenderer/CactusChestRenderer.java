@@ -1,33 +1,14 @@
 package com.Noodlegamer76.RandomThings.client.renderer.blockentityrenderer;
 
 import com.Noodlegamer76.RandomThings.RandomThingsMod;
-import com.Noodlegamer76.RandomThings.init.BlockEntityInit;
-import com.Noodlegamer76.RandomThings.init.ItemInit;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.particle.Particle;
-import net.minecraft.client.particle.ParticleDescription;
-import net.minecraft.client.particle.ParticleRenderType;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.ChestRenderer;
-import net.minecraft.client.renderer.entity.ItemRenderer;
-import net.minecraft.client.renderer.texture.TextureAtlas;
-import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.Material;
-import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleType;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemDisplayContext;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.properties.ChestType;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 public class CactusChestRenderer extends ChestRenderer {
     public static final Material CHEST_LOCATION = new Material(Sheets.CHEST_SHEET, new ResourceLocation(RandomThingsMod.MODID, "entity/chest/cactus_normal"));
@@ -55,7 +36,7 @@ public class CactusChestRenderer extends ChestRenderer {
 
     @Override
     public void render(BlockEntity blockEntity, float pPartialTick, PoseStack ps, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
-  /*      ModelResourceLocation modelLocation = new ModelResourceLocation(new ResourceLocation(RandomThingsMod.MODID, "block/brick_small09"), "normal");
+  /*      ModelResourceLocation modelLocation = new ModelResourceLocation(new ResourceLocation(RandomThingsMod.MODID, "Block/brick_small09"), "normal");
         BakedModel bakedModel = Minecraft.getInstance().getModelManager().getModel(modelLocation);
 
 

@@ -2,9 +2,7 @@ package com.Noodlegamer76.RandomThings.datagen;
 
 import com.Noodlegamer76.RandomThings.init.BlockInit;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
@@ -40,6 +38,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(BlockInit.RAINBOW_PRESSURE_PLATE.get());
         dropSelf(BlockInit.RAINBOW_TRAPDOOR.get());
         dropSelf(BlockInit.QUICKER_SAND.get());
+        dropSelf(BlockInit.CRYSTALLIZED_STONE.get());
 
         this.add(BlockInit.RAINBOW_SLAB.get(),
                 block -> createSlabItemTable(BlockInit.RAINBOW_SLAB.get()));

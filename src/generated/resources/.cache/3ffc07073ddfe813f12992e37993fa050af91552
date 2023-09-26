@@ -1,8 +1,10 @@
-// 1.20.1	2023-08-31T12:25:10.9395774	Item Models: random_things
+// 1.20.1	2023-09-21T16:27:03.311763	Item Models: random_things
+7348642d03cef1916398d28c4b70f2505bc05deb assets/random_things/models/item/iron_knife.json
 1b89b44f4053069c7dd521bae031b0b0e58a5f14 assets/random_things/models/item/rainbow_button.json
 52b90c07a244796fbe1fb70c16ba9a9ecb98b282 assets/random_things/models/item/rainbow_door.json
 633a6d823035922343752a25daa0273e8eafe5a7 assets/random_things/models/item/rainbow_fence.json
 4c62d06258677f282238ac386d3686fb9c1498cc assets/random_things/models/item/rainbow_fence_gate.json
+b7838bf79462ee4f2714ac4d9c0ae593d358240d assets/random_things/models/item/rainbow_gem.json
 4455429bf74c672759975126dceabf81db464b32 assets/random_things/models/item/rainbow_pressure_plate.json
 e2b898a241849c720fc0bca89db59e605ab12018 assets/random_things/models/item/rainbow_sapling.json
 c62a1fd2756b710d85544b2db804731f8ea649e3 assets/random_things/models/item/rainbow_slab.json

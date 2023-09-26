@@ -9,7 +9,6 @@ import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.ExplosionSpellIt
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.SpellItem;
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.TntSpellItem;
 import com.Noodlegamer76.RandomThings.util.ToolTiers;
-import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -32,7 +31,7 @@ public class ItemInit {
             () -> new ShovelItem(ToolTiers.ModItemTier.BLUE, 1.5F, -3.0F, new Item.Properties()));
     public static final RegistryObject<Item> IRON_KNIFE = ITEMS.register("iron_knife",
             () -> new SwordItem(Tiers.IRON, 3, -2.4F, new Item.Properties()));
-    public static final RegistryObject<Item> CHEESE_SANDWICH = ITEMS.register("cheese_sandwich.json",
+    public static final RegistryObject<Item> CHEESE_SANDWICH = ITEMS.register("cheese_sandwich",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TNT_PICKAXE = ITEMS.register("tnt_pickaxe",
             () -> new TntPickaxe(Tiers.STONE, 1, -2.8F, new Item.Properties()));
@@ -40,6 +39,10 @@ public class ItemInit {
             () -> new CactusShield(new Item.Properties()));
     public static final RegistryObject<Item> YOUTUBER_PICKAXE = ITEMS.register("youtuber_pickaxe",
             () -> new YoutuberPickaxe(ToolTiers.ModItemTier.YOUTUBER, 1, -2.8F, new Item.Properties()));
+    public static final RegistryObject<Item> RAINBOW_GEM = ITEMS.register("rainbow_gem",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GRAVITY_GAUNTLET = ITEMS.register("gravity_gauntlet",
+            () -> new GravityGauntlet(new Item.Properties()));
 
     public static final RegistryObject<Item> MODIFIER_ITEM = ITEMS.register("modifier_item",
             () -> new ModifierItem(new Item.Properties()));
@@ -102,6 +105,8 @@ public class ItemInit {
             () -> new BlockItem(BlockInit.RAINBOW_TRAPDOOR.get(), new Item.Properties()));
     public static final RegistryObject<Item> QUICKER_SOUND = ITEMS.register("quicker_sand",
             () -> new BlockItem(BlockInit.QUICKER_SAND.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CRYSTALLIZED_STONE = ITEMS.register("crystallized_stone",
+            () -> new BlockItem(BlockInit.CRYSTALLIZED_STONE.get(), new Item.Properties()));
 
 
 }

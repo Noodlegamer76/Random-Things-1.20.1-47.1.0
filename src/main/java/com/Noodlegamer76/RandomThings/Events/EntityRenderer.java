@@ -5,7 +5,6 @@ import com.Noodlegamer76.RandomThings.client.models.FireBallModel;
 import com.Noodlegamer76.RandomThings.client.models.LightningBallModel;
 import com.Noodlegamer76.RandomThings.client.models.ShieldModModel;
 import com.Noodlegamer76.RandomThings.client.models.ThrownTntModel;
-import com.Noodlegamer76.RandomThings.client.renderer.BEWLR.BEWLR;
 import com.Noodlegamer76.RandomThings.client.renderer.entity.projectiles.FireBallRenderer;
 import com.Noodlegamer76.RandomThings.client.renderer.entity.projectiles.LightningBallRenderer;
 import com.Noodlegamer76.RandomThings.client.renderer.entity.projectiles.ThrownTntRenderer;
@@ -13,8 +12,6 @@ import com.Noodlegamer76.RandomThings.client.renderer.blockentityrenderer.Cactus
 import com.Noodlegamer76.RandomThings.client.renderer.blockentityrenderer.TntChestRenderer;
 import com.Noodlegamer76.RandomThings.init.BlockEntityInit;
 import com.Noodlegamer76.RandomThings.init.EntityInit;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

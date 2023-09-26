@@ -1,11 +1,9 @@
 package com.Noodlegamer76.RandomThings.datagen;
 
 import com.Noodlegamer76.RandomThings.init.BlockInit;
-import com.Noodlegamer76.RandomThings.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;

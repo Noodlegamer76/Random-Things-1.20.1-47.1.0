@@ -3,7 +3,6 @@ package com.Noodlegamer76.RandomThings.client.renderer.entity.projectiles;
 import com.Noodlegamer76.RandomThings.Entities.projectiles.LightningBall;
 import com.Noodlegamer76.RandomThings.Entities.projectiles.ThrownTntEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.world.entity.Entity;
 import org.joml.Quaternionf;
 
 public class SpinPoseStack {

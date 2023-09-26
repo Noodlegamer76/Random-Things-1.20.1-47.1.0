@@ -1,18 +1,14 @@
 package com.Noodlegamer76.RandomThings.client.renderer.BEWLR;
 
-import com.Noodlegamer76.RandomThings.Entities.projectiles.ThrownTntEntity;
 import com.Noodlegamer76.RandomThings.RandomThingsMod;
 import com.Noodlegamer76.RandomThings.client.models.ThrownTntModel;
-import com.Noodlegamer76.RandomThings.client.renderer.entity.projectiles.SpinPoseStack;
-import com.Noodlegamer76.RandomThings.init.EntityInit;
-import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.ExplosionSpellItem;
+import com.Noodlegamer76.RandomThings.Entities.projectiles.ThrownTntEntity;
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.TntSpellItem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;

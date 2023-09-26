@@ -1,7 +1,5 @@
 package com.Noodlegamer76.RandomThings.partcle.custom;
 
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraft.core.particles.SimpleParticleType;
@@ -24,11 +22,6 @@ public class ConfettiParticles extends TextureSheetParticle {
         this.rCol = (float) Math.random();
         this.gCol = (float) Math.random();
         this.bCol = (float) Math.random();
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
     }
 
     @Override

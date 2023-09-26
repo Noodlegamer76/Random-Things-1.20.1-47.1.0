@@ -1,13 +1,11 @@
 package com.Noodlegamer76.RandomThings.datagen;
 
 import com.Noodlegamer76.RandomThings.RandomThingsMod;
-import com.Noodlegamer76.RandomThings.init.BlockInit;
 import com.Noodlegamer76.RandomThings.init.ItemInit;
 import com.Noodlegamer76.RandomThings.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;

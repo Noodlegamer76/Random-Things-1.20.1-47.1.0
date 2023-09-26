@@ -1,24 +1,12 @@
 package com.Noodlegamer76.RandomThings.spellcrafting.spell.items;
 
-import com.Noodlegamer76.RandomThings.Events.ClientSetupEvent;
-import com.Noodlegamer76.RandomThings.RandomThingsMod;
-import com.Noodlegamer76.RandomThings.client.renderer.BEWLR.BEWLR;
-import net.minecraft.client.Minecraft;
+import com.Noodlegamer76.RandomThings.Events.RegisterParticleProviders;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
-import net.minecraft.client.renderer.block.model.BakedQuad;
-import net.minecraft.client.renderer.block.model.ItemOverrides;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.core.Direction;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.function.Consumer;
 
 public class TntSpellItem extends SpellItem {
@@ -34,7 +22,7 @@ public class TntSpellItem extends SpellItem {
 
             @Override
             public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                return ClientSetupEvent.bewlr;
+                return RegisterParticleProviders.bewlr;
             }
         });
     }

@@ -1,13 +1,12 @@
 package com.Noodlegamer76.RandomThings;
 
 import com.Noodlegamer76.RandomThings.Events.CreativeTab;
-import com.Noodlegamer76.RandomThings.Events.ClientSetupEvent;
-import com.Noodlegamer76.RandomThings.Events.EntityRenderer;
-import com.Noodlegamer76.RandomThings.client.renderer.BEWLR.BEWLR;
 import com.Noodlegamer76.RandomThings.enchantment.ModEnchantments;
 import com.Noodlegamer76.RandomThings.init.*;
 import com.Noodlegamer76.RandomThings.menus.WandScreen;
 import com.Noodlegamer76.RandomThings.partcle.ModParticle;
+import com.Noodlegamer76.RandomThings.partcle.custom.ConfettiParticles;
+import com.Noodlegamer76.RandomThings.partcle.custom.CubePartcles;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -16,9 +15,13 @@ import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,7 +30,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
@@ -39,18 +41,6 @@ public class RandomThingsMod
     public static final String MODID = "random_things";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
-    // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
-    //public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-    // Create a Deferred Register to hold Items which will all be registered under the "examplemod" namespace
-    //public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
-
-    // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
-    //public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block", () -> new SadBlock(Block.Properties.of(Material.STONE)));
-    // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
-    //public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties()));
-
-
-
     public RandomThingsMod()
     {
 
@@ -82,16 +72,12 @@ public class RandomThingsMod
 
 
 
-
-
-
-
         // Register the Deferred Register to the mod event bus so blocks get registered
         //BLOCKS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
         //ITEMS.register(modEventBus);
 
-        // Register ourselves for server and other game events we are interested in
+        // Register ourselves for server and other game Events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab
@@ -129,8 +115,6 @@ public class RandomThingsMod
         {
 
             event.enqueueWork(
-                    // Assume RegistryObject<MenuType<MyMenu>> MY_MENU
-                    // Assume MyContainerScreen<MyMenu> which takes in three parameters
                     () -> MenuScreens.register(MenuTypeInit.WAND_MENU.get(), WandScreen::new));
 
             MeshDefinition meshdefinition = new MeshDefinition();
@@ -143,6 +127,35 @@ public class RandomThingsMod
 
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        }
+        @SubscribeEvent
+        void RegisterParticleProviders(RegisterParticleProvidersEvent event) {
+            Minecraft.getInstance().particleEngine.register(ModParticle.CONFETTI.get(),
+                    ConfettiParticles.Provider::new);
+            Minecraft.getInstance().particleEngine.register(ModParticle.CUBE.get(),
+                    CubePartcles.Provider::new);
+        }
+
+        @SubscribeEvent
+        public static void assignBlockColors(RegisterColorHandlersEvent.Block event) {
+            event.register((state, level, pos, tintIndex) -> pos != null && level != null ?
+              getColor(state, level, pos) : 1 , BlockInit.CRYSTALLIZED_STONE.get()
+            );
+        }
+
+        @SubscribeEvent
+        public static void assignItemColors(RegisterColorHandlersEvent.Item event) {
+          // event.register((item,tintIndex) -> tintIndex != -1 ? event.getBlockColors().getColor(((BlockItem)item.getItem()).getBlock().defaultBlockState(), null, null, tintIndex) : GrassColor.getDefaultColor(),
+          //         ItemInit.YOUTUBER_PICKAXE.get()
+          // );
+        }
+        static int getColor(BlockState state, BlockAndTintGetter blockAndTintGetter, BlockPos pos) {
+            if(pos.getX() % 2 == 0) {
+                return 9032448;
+            }
+            else {
+                return 4343;
+            }
         }
     }
 }
