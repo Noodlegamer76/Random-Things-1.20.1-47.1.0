@@ -1,4 +1,7 @@
-// 1.20.1	2023-09-21T16:27:03.311763	Item Models: random_things
+// 1.20.1	2023-09-30T16:32:36.9190361	Item Models: random_things
+ebf49192b4e91594756605f03a284595736e90cf assets/random_things/models/item/crystallized_dirt.json
+11a3e5a184359cb49a9afd557716a2ad3c58e88a assets/random_things/models/item/crystallized_grass_block.json
+a1a3b6ff566b9e4c7855a7c7666581b29c007c45 assets/random_things/models/item/crystallized_stone.json
 7348642d03cef1916398d28c4b70f2505bc05deb assets/random_things/models/item/iron_knife.json
 1b89b44f4053069c7dd521bae031b0b0e58a5f14 assets/random_things/models/item/rainbow_button.json
 52b90c07a244796fbe1fb70c16ba9a9ecb98b282 assets/random_things/models/item/rainbow_door.json

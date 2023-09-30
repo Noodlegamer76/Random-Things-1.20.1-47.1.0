@@ -39,6 +39,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(BlockInit.RAINBOW_TRAPDOOR.get());
         dropSelf(BlockInit.QUICKER_SAND.get());
         dropSelf(BlockInit.CRYSTALLIZED_STONE.get());
+        dropSelf(BlockInit.CRYSTALLIZED_GRASS_BLOCK.get());
+        dropSelf(BlockInit.CRYSTALLIZED_DIRT.get());
 
         this.add(BlockInit.RAINBOW_SLAB.get(),
                 block -> createSlabItemTable(BlockInit.RAINBOW_SLAB.get()));

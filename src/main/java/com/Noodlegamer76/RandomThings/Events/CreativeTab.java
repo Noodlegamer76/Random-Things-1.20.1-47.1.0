@@ -51,6 +51,8 @@ public class CreativeTab {
             event.accept(ItemInit.TNT_LAUNCH_SPELL);
             event.accept(ItemInit.RAINBOW_GEM);
             event.accept(ItemInit.CRYSTALLIZED_STONE);
+            event.accept(ItemInit.CRYSTALLIZED_GRASS_BLOCK);
+            event.accept(ItemInit.CRYSTALLIZED_DIRT);
         }
     }
 }

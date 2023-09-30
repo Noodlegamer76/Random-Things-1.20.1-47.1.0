@@ -28,9 +28,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         saplingBlock(BlockInit.RAINBOW_SAPLING);
 
-        final ResourceLocation RAINBOW_PLANKS_TEXTURE = new ResourceLocation(RandomThingsMod.MODID, "Block/rainbow_planks");
-        final ResourceLocation RAINBOW_LOG_SIDE_TEXTURE = new ResourceLocation(RandomThingsMod.MODID, "Block/rainbow_log_side");
-        final ResourceLocation STRIPPED_RAINBOW_LOG_SIDE_TEXTURE = new ResourceLocation(RandomThingsMod.MODID, "Block/stripped_rainbow_log_side");
+        final ResourceLocation RAINBOW_PLANKS_TEXTURE = new ResourceLocation(RandomThingsMod.MODID, "block/rainbow_planks");
+        final ResourceLocation RAINBOW_LOG_SIDE_TEXTURE = new ResourceLocation(RandomThingsMod.MODID, "block/rainbow_log_side");
+        final ResourceLocation STRIPPED_RAINBOW_LOG_SIDE_TEXTURE = new ResourceLocation(RandomThingsMod.MODID, "block/stripped_rainbow_log_side");
 
         slabBlock((SlabBlock) BlockInit.RAINBOW_SLAB.get(), RAINBOW_PLANKS_TEXTURE,
                 RAINBOW_PLANKS_TEXTURE);
@@ -43,8 +43,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         fenceGateBlock((FenceGateBlock) BlockInit.RAINBOW_FENCE_GATE.get(), RAINBOW_PLANKS_TEXTURE);
         wallBlock((WallBlock) BlockInit.RAINBOW_WALL.get(), RAINBOW_PLANKS_TEXTURE);
 
-        doorBlockWithRenderType((DoorBlock) BlockInit.RAINBOW_DOOR.get(), modLoc("Block/rainbow_door_bottom"), modLoc("Block/rainbow_door_top"), "cutout");
-        trapdoorBlockWithRenderType((TrapDoorBlock) BlockInit.RAINBOW_TRAPDOOR.get(), modLoc("Block/rainbow_trapdoor"), true, "cutout");
+        doorBlockWithRenderType((DoorBlock) BlockInit.RAINBOW_DOOR.get(), modLoc("block/rainbow_door_bottom"), modLoc("block/rainbow_door_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) BlockInit.RAINBOW_TRAPDOOR.get(), modLoc("block/rainbow_trapdoor"), true, "cutout");
 
     }
 

@@ -107,6 +107,11 @@ public class ItemInit {
             () -> new BlockItem(BlockInit.QUICKER_SAND.get(), new Item.Properties()));
     public static final RegistryObject<Item> CRYSTALLIZED_STONE = ITEMS.register("crystallized_stone",
             () -> new BlockItem(BlockInit.CRYSTALLIZED_STONE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CRYSTALLIZED_GRASS_BLOCK = ITEMS.register("crystallized_grass_block",
+            () -> new BlockItem(BlockInit.CRYSTALLIZED_GRASS_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CRYSTALLIZED_DIRT = ITEMS.register("crystallized_dirt",
+            () -> new BlockItem(BlockInit.CRYSTALLIZED_DIRT.get(), new Item.Properties()));
+
 
 
 }

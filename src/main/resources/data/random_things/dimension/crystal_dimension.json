@@ -217,7 +217,7 @@
                                                 "type": "minecraft:noise",
                                                 "noise": "minecraft:cave_cheese",
                                                 "xz_scale": 1,
-                                                "y_scale": 0.6666666666666666
+                                                "y_scale": 0.666666666666666
                                               }
                                             },
                                             "min": -1,
@@ -460,7 +460,7 @@
                                     "then_run": {
                                       "type": "minecraft:block",
                                       "result_state": {
-                                        "Name": "minecraft:grass_block",
+                                        "Name": "random_things:crystallized_grass_block",
                                         "Properties": {
                                           "snowy": "false"
                                         }
@@ -470,7 +470,7 @@
                                   {
                                     "type": "minecraft:block",
                                     "result_state": {
-                                      "Name": "minecraft:dirt"
+                                      "Name": "random_things:crystallized_dirt"
                                     }
                                   }
                                 ]
@@ -1513,7 +1513,7 @@
                                           "then_run": {
                                             "type": "minecraft:block",
                                             "result_state": {
-                                              "Name": "minecraft:grass_block",
+                                              "Name": "random_things:crystallized_grass_block",
                                               "Properties": {
                                                 "snowy": "false"
                                               }
@@ -1523,7 +1523,7 @@
                                         {
                                           "type": "minecraft:block",
                                           "result_state": {
-                                            "Name": "minecraft:dirt"
+                                            "Name": "random_things:crystallized_dirt"
                                           }
                                         }
                                       ]
@@ -1678,7 +1678,7 @@
                                   "then_run": {
                                     "type": "minecraft:block",
                                     "result_state": {
-                                      "Name": "minecraft:grass_block",
+                                      "Name": "random_things:crystallized_grass_block",
                                       "Properties": {
                                         "snowy": "false"
                                       }
@@ -2310,7 +2310,7 @@
                             {
                               "type": "minecraft:block",
                               "result_state": {
-                                "Name": "minecraft:dirt"
+                                "Name": "random_things:crystallized_dirt"
                               }
                             }
                           ]
@@ -2521,7 +2521,7 @@
               -1,
               -0.9333
             ],
-            "depth": 0,
+            "depth": 1,
             "offset": 0
           }
         }

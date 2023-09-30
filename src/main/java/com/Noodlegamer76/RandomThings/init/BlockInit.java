@@ -147,7 +147,10 @@ public class BlockInit {
 
     public static final RegistryObject<Block> CRYSTALLIZED_STONE = BLOCKS.register("crystallized_stone",
             () -> new HalfTransparentBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion()));
-
+    public static final RegistryObject<Block> CRYSTALLIZED_GRASS_BLOCK = BLOCKS.register("crystallized_grass_block",
+            () -> new HalfTransparentBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion()));
+    public static final RegistryObject<Block> CRYSTALLIZED_DIRT = BLOCKS.register("crystallized_dirt",
+            () -> new HalfTransparentBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).noOcclusion()));
 
 
 }
