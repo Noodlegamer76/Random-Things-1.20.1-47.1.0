@@ -25,17 +25,20 @@ public class SphereFeature extends Feature<NoneFeatureConfiguration> {
         if (levelAccessor.isEmptyBlock(origin) && levelAccessor.getBlockState(origin.below()).is(BlockTags.DIRT)) {
 
 
-            //Radius of the sphere, change first parameter, radius doesn't include center
-            int outerRadius = (int) Math.pow(8, 2);
-            int innerRadius = (int) Math.pow(4, 2);
+            //creates a sphere the size of the outer radius, blocks under the inner radius aren't affected
+            int outerRadius = 16;
+            int innerRadius = 3;
+            int innerRadiusSqr = outerRadius * outerRadius;
+            int outerRadiusSqr = innerRadius * innerRadius;
+            BlockPos.MutableBlockPos current = new BlockPos.MutableBlockPos();
 
             for (int x = origin.getX() - outerRadius; x <= origin.getX() + outerRadius; x++) {
                 for (int y = origin.getY() - outerRadius; y <= origin.getY() + outerRadius; y++) {
                     for (int z = origin.getZ() - outerRadius; z <= origin.getZ() + outerRadius; z++) {
-                        BlockPos current = new BlockPos(x, y, z);
+                        current.set(x, y, z);
                         double distance = origin.distSqr(current);
 
-                        if (distance <= outerRadius && distance >= innerRadius) {
+                        if (distance <= innerRadiusSqr && distance >= outerRadiusSqr) {
                             pContext.level().setBlock(current, Blocks.OAK_LOG.defaultBlockState(), 3);
                         }
                     }

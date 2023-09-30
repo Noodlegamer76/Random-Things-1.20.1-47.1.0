@@ -9,7 +9,7 @@
       "ore_veins_enabled": true,
       "legacy_random_source": false,
       "default_block": {
-        "Name": "minecraft:stone"
+        "Name": "random_things:crystallized_stone"
       },
       "default_fluid": {
         "Name": "minecraft:water",

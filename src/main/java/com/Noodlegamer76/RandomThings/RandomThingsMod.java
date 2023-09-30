@@ -16,7 +16,13 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.monster.EnderMan;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.GrassColor;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
@@ -32,6 +38,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
+
+import javax.annotation.Nonnull;
+import java.awt.*;
+import java.time.Clock;
+import java.util.function.BooleanSupplier;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(RandomThingsMod.MODID)
@@ -139,23 +150,21 @@ public class RandomThingsMod
         @SubscribeEvent
         public static void assignBlockColors(RegisterColorHandlersEvent.Block event) {
             event.register((state, level, pos, tintIndex) -> pos != null && level != null ?
-              getColor(state, level, pos) : 1 , BlockInit.CRYSTALLIZED_STONE.get()
+              getColor(state, level, pos) : 254, BlockInit.CRYSTALLIZED_STONE.get()
             );
         }
 
         @SubscribeEvent
         public static void assignItemColors(RegisterColorHandlersEvent.Item event) {
-          // event.register((item,tintIndex) -> tintIndex != -1 ? event.getBlockColors().getColor(((BlockItem)item.getItem()).getBlock().defaultBlockState(), null, null, tintIndex) : GrassColor.getDefaultColor(),
-          //         ItemInit.YOUTUBER_PICKAXE.get()
-          // );
+           event.register((item,tintIndex) -> tintIndex != -1 ? Color.getHSBColor(0, 1.0F, 1.0F).getRGB() : Color.RED.getRGB(),
+                   ItemInit.CRYSTALLIZED_STONE.get()
+           );
+
         }
         static int getColor(BlockState state, BlockAndTintGetter blockAndTintGetter, BlockPos pos) {
-            if(pos.getX() % 2 == 0) {
-                return 9032448;
-            }
-            else {
-                return 4343;
-            }
+            Color color = Color.getHSBColor((float) (pos.getX() + pos.getY() + pos.getZ()) / 180, 1.0F, 1.0F);
+
+                return color.getRGB();
         }
     }
 }

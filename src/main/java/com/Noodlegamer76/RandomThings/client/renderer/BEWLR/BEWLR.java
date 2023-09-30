@@ -4,6 +4,7 @@ import com.Noodlegamer76.RandomThings.RandomThingsMod;
 import com.Noodlegamer76.RandomThings.client.models.ThrownTntModel;
 import com.Noodlegamer76.RandomThings.Entities.projectiles.ThrownTntEntity;
 import com.Noodlegamer76.RandomThings.spellcrafting.spell.items.TntSpellItem;
+import com.mojang.authlib.minecraft.client.MinecraftClient;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;
@@ -13,6 +14,8 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
+
+import java.util.Objects;
 
 public class BEWLR extends BlockEntityWithoutLevelRenderer {
     ThrownTntModel<ThrownTntEntity> thrownTntModel;

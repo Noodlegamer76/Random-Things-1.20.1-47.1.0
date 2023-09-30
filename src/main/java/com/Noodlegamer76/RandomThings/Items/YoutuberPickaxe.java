@@ -1,11 +1,17 @@
 package com.Noodlegamer76.RandomThings.Items;
 
 import com.Noodlegamer76.RandomThings.partcle.ModParticle;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.EnderMan;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.vehicle.Minecart;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
@@ -65,6 +71,10 @@ public class YoutuberPickaxe extends PickaxeItem {
 
 
 
+        Zombie camera = new Zombie(EntityType.ZOMBIE, pLevel);
+        camera.setPos(pPlayer.blockPosition().getCenter());
+        pLevel.addFreshEntity(camera);
+        
              if(pLevel.isClientSide) {
                  for(int i = 0; i < 1000; i++) {
                      pLevel.addParticle(ModParticle.CUBE.get(),pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5 );
@@ -72,4 +82,6 @@ public class YoutuberPickaxe extends PickaxeItem {
              }
         return super.use(pLevel, pPlayer, pUsedHand);
     }
+
+
 }
