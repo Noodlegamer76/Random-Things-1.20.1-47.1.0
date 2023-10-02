@@ -16,9 +16,12 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.levelgen.synth.PerlinNoise;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
@@ -34,6 +37,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 import java.awt.*;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.IntStream;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(RandomThingsMod.MODID)
@@ -141,7 +147,7 @@ public class RandomThingsMod
         @SubscribeEvent
         public static void assignBlockColors(RegisterColorHandlersEvent.Block event) {
             event.register((state, level, pos, tintIndex) -> pos != null && level != null ?
-              getColor(state, level, pos) : 254,
+                    Color.getHSBColor((float) (pos.getX() + pos.getY() + pos.getZ()) / 360, 1.0F, 1.0F).getRGB() : 254,
                     BlockInit.CRYSTALLIZED_STONE.get(),
                     BlockInit.CRYSTALLIZED_DIRT.get(),
                     BlockInit.CRYSTALLIZED_GRASS_BLOCK.get()
@@ -156,11 +162,6 @@ public class RandomThingsMod
                    ItemInit.CRYSTALLIZED_GRASS_BLOCK.get()
            );
 
-        }
-        static int getColor(BlockState state, BlockAndTintGetter blockAndTintGetter, BlockPos pos) {
-            Color color = Color.getHSBColor((float) (pos.getX() + pos.getY() + pos.getZ()) / 180, 1.0F, 1.0F);
-
-                return color.getRGB();
         }
     }
 }
