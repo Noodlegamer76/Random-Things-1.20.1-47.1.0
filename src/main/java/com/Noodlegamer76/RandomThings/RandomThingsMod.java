@@ -150,7 +150,8 @@ public class RandomThingsMod
                     Color.getHSBColor((float) (pos.getX() + pos.getY() + pos.getZ()) / 360, 1.0F, 1.0F).getRGB() : 254,
                     BlockInit.CRYSTALLIZED_STONE.get(),
                     BlockInit.CRYSTALLIZED_DIRT.get(),
-                    BlockInit.CRYSTALLIZED_GRASS_BLOCK.get()
+                    BlockInit.CRYSTALLIZED_GRASS_BLOCK.get(),
+                    Blocks.GRASS_BLOCK
             );
         }
 
