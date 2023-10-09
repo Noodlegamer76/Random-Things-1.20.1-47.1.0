@@ -107,14 +107,29 @@ public class WandCast {
 
     //updates or resets which slot the wand should start on
     private void setSlot(int slot) {
-        if (slot + 1 >= capacity) {
+        //check if there are any more spells to cast, if not then the wand queue resets to 0
+        boolean reset = true;
+        int current = slot;
+        for(;current < capacity;++current) {
+            ItemStack item = handler.getStackInSlot(current);
+            if (item.getItem() instanceof SpellItem) {
+                reset = false;
+                System.out.println("SPELL DETECTED");
+                break;
+            }
+        }
+
+        //either resets wand queue or goes to the next slot
+        if (slot + 1 >= capacity || reset) {
             nbt.putInt("slot", 0);
             shouldCast = false;
             System.out.println("RESET");
         }
         else {
             nbt.putInt("slot", slot + 1);
+            System.out.println("ADD 1");
         }
+
     }
 
     public void setHandler(IItemHandler handler) {
